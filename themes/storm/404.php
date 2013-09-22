@@ -1,7 +1,5 @@
 <?php get_header(); ?>
 
-<!-- test -->
-
 	<!-- section -->
 	<section role="main">
 	
