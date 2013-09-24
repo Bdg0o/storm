@@ -561,4 +561,12 @@ function jeu_save_postdata( $post_id ) {
   // or a custom table (see Further Reading section below)
 }
 
+/* Ajout de Maxime */
+
+	// Custom du preview des articles
+	function custom_excerpt_length( $length ) {
+	return 35;
+	}
+	add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
 ?>

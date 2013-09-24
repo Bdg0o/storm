@@ -40,8 +40,9 @@
 							<img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" alt="Logo" class="logo-img">
 						</a>
 					</div>
-
-					<a href="#" id="connection">Connexion / Inscription</a>
+					<div id="connection">
+						<a href="#" class="connexion">Connexion</a> / <a href="#" class="connexion">Inscription</a>
+					</div>
 					<!-- /logo -->
 			</header>
 			<!-- /header -->
