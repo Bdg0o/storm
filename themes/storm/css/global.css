@@ -216,9 +216,13 @@ input:focus {
     padding-left: 20px; }
 .sidebar-widget ul {
 	list-style: none;
-	padding: 0 0 0 3px; }
+	padding: 0; }
 .sidebar-widget li .bbp-forum-title {
-	font-weight: bold; }
+	font-weight: bold;
+	color: #333;
+	font-size: 0.938em; }
+.sidebar-widget li .bbp-forum-title:hover {
+	color: #f2473f; }
 .sidebar-widget #live_embed_player_flash {
 	border: 3px solid #fff; 
 	box-shadow: 1px 1px 4px #c0c0c0; }
@@ -231,7 +235,8 @@ input:focus {
   background: black;
   color: white;
   min-height: 300px;
-  margin-bottom: -14px; }
+  margin-bottom: -14px;
+  position: relative; }
   .footer a {
     color: #f2473f; }
   .footer .listeArchives {
@@ -239,6 +244,12 @@ input:focus {
     padding-left: 5px; }
     .footer .listeArchives li a {
       color: white; }
+    .footer .listeArchives li a:hover {
+	  color: #ef4d3a; }
+  .footer .copyright {
+	  position: absolute;
+	  bottom: 0; }
+	  
 
 /*------------------------------------*\
     PAGES
@@ -285,6 +296,8 @@ input:focus {
       padding: 5px 8px; }
   .home .main .post .view-article {
     color: #f2473f; }
+  .home .main .post .view-article:hover {
+	border-bottom: 1px solid #ef4d3a; }
   .home .main .post .post-edit-link {
     font-size: 0.8em;
     position: absolute;
