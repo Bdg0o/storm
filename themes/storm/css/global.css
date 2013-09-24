@@ -116,6 +116,11 @@ input:focus {
   color: white;
   padding: 5px 10px;
   font-size: 0.9em; }
+.connexion {
+  color: #fff;
+  text-decoration: none; } 
+.connexion:hover {
+  color: #ef4d3a; }
 
 /* nav */
 .nav {
@@ -126,7 +131,14 @@ input:focus {
     padding: 0; }
   .nav li, .nav a {
     color: white;
-    padding: 10px 0; }
+    padding: 8px 0; }
+  .nav li:hover, .nav a:hover {
+  	color: #ef4d3a; }
+  .current-menu-item {
+    padding: 8px 0;
+    border-bottom: 3px solid #ef4d3a; }
+  .current-menu-item a:hover {
+    color: white !important; }
   .nav .menu-item {
     display: inline-block;
     margin-right: 30px; }
@@ -138,8 +150,7 @@ input:focus {
     width: 250px;
     font-size: 0.8em;
     text-align: right;
-    position: relative;
-    top: 5px; }
+    margin: 5px 0; }
     .nav .search .search-input {
       background: #222222;
       border: 1px solid #646464;
@@ -147,7 +158,8 @@ input:focus {
       color: white;
       height: 25px;
       margin-top: 2px;
-      width: 120px; }
+      width: 120px;
+      padding-left: 8px; }
     .nav .search .search-submit {
       border: 1px solid #646464;
       border-radius: 0 5px 5px 0;
@@ -155,6 +167,9 @@ input:focus {
       color: white;
       height: 29px;
       margin-top: 2px; }
+    .nav .search .search-submit:hover {
+      background: #e6e6e6;
+      color: #333; }
 
 /* Fil d'Ariane */
 .filAriane {
@@ -171,7 +186,9 @@ input:focus {
 .nivo-controlNav .nivo-control {
   margin: 0 5px; }
   .nivo-controlNav .nivo-control img {
-    border: 2px solid #222222; }
+    border: 2px solid #222; }
+  .nivo-controlNav .nivo-control img:hover {
+  	border: 2px solid #e6e6e6; }
   .nivo-controlNav .nivo-control.active {
     display: inline-block;
     padding-top: 8px;
@@ -184,15 +201,27 @@ input:focus {
   margin: 20px 0; }
   .pagination .page-numbers {
     padding: 2px 6px; }
+  .pagination .page-numbers:hover {
+  	text-decoration: underline;
+  	color: #000; }
     .pagination .page-numbers.current, .pagination .page-numbers.next, .pagination .page-numbers.prev {
       background: #f2473f;
-      color: white; }
+      color: white;
+      text-decoration: none; }
 
 /* sidebar */
 .sidebar {
   vertical-align: top; }
   .sidebar .sidebar-widget {
     padding-left: 20px; }
+.sidebar-widget ul {
+	list-style: none;
+	padding: 0 0 0 3px; }
+.sidebar-widget li .bbp-forum-title {
+	font-weight: bold; }
+.sidebar-widget #live_embed_player_flash {
+	border: 3px solid #fff; 
+	box-shadow: 1px 1px 4px #c0c0c0; }
 
 /* footer */
 .footer {
@@ -201,7 +230,8 @@ input:focus {
   border-top: 2px solid #f2473f;
   background: black;
   color: white;
-  min-height: 300px; }
+  min-height: 300px;
+  margin-bottom: -14px; }
   .footer a {
     color: #f2473f; }
   .footer .listeArchives {
@@ -217,20 +247,37 @@ input:focus {
 .home .main .post {
   border-bottom: 1px solid #bababa;
   margin-bottom: 15px;
-  padding-bottom: 10px; }
+  padding-bottom: 25px;
+  position: relative; }
   .home .main .post .wp-post-image {
     float: left;
     margin-right: 10px;
     border: 3px solid #fff;
     box-shadow: 1px 1px 4px #c0c0c0; }
+  .home .main .post .wp-post-image:hover {
+  	border: 3px solid #ef4d3a;
+  	box-shadow: none; }
+  .home .main .post p {
+	margin: 0.3em 0 0.8em; }
   .home .main .post h2 {
     font-size: 1.2em;
     margin: 0; }
+  .home .main .post h2 a:hover {
+  	color: #ef4d3a;}
     .home .main .post h2 .jeu {
       font-style: italic; }
   .home .main .post .date, .home .main .post .author, .home .main .post .category {
     font-size: 0.85em; }
+  .home .main .post .author a {
+  	font-style: italic;
+  	font-weight: 500;
+  	color: #222; }
+  .home .main .post .author a:hover {
+   	color: #ef4d3a; }
+  .home .main .post .category a:hover {
+  	text-decoration: underline; }
   .home .main .post .comment {
+  	margin-top: 7px;
     float: right;
     background: #f2473f; }
     .home .main .post .comment a {
@@ -239,7 +286,13 @@ input:focus {
   .home .main .post .view-article {
     color: #f2473f; }
   .home .main .post .post-edit-link {
-    font-size: 0.8em; }
+    font-size: 0.8em;
+    position: absolute;
+    bottom: 2px;
+    right: 30px; }
+  .home .main .post .post-edit-link:hover {
+    color: #ef4d3a; }
+    
 
 /******* PAGE TYPE *******/
 .page .sidebar {
