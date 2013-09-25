@@ -195,6 +195,16 @@ input:focus {
     background: url("../img/flecheSlider.png") no-repeat center top; }
     .nivo-controlNav .nivo-control.active img {
       border: 2px solid #f2473f; }
+  .nivo-caption {
+  	bottom: 70px;
+  	left: 240px;
+  	background: rgba(0, 0, 0, 0.7);
+  	display: inline;
+  	text-transform: uppercase;
+  	color: #ef4d3a; 
+  	font-weight: bold;
+  	width: 960px;
+  	position: relative; }
 
 .pagination {
   text-align: center;
@@ -474,3 +484,17 @@ a img.aligncenter {
   h2,
   h3 {
     page-break-after: avoid; } }
+
+/*------------------------------------*\
+    FORUM
+\*------------------------------------*/
+
+.bbp-template-notice.info {
+	display: none;
+}
+
+.bbp-template-notice, div.indicator-hint {
+	background-color: #fb6d5d !important;
+	border-color: #ef4d3a !important;
+	color: #fff !important;
+}
