@@ -179,7 +179,48 @@ input:focus {
     color: #f2473f; }
 
 /*NIVO SLIDER*/
-.slider-wrapper {
+
+.rs-wrap
+{
+  background: black;
+  margin-bottom: 20px; 
+}
+.rs-slider 
+{
+  padding : 0;
+}
+.rs-slider li img
+{
+  margin: auto;
+}
+
+.rs-thumb-wrap
+{
+  margin: 0 5px;
+}
+
+.rs-thumb-wrap a img {
+    border: 2px solid #222; }
+  .rs-thumb-wrap a img:hover {
+    border: 2px solid #e6e6e6; }
+  .rs-thumb-wrap a.active {
+    display: inline-block;
+    padding-top: 8px;
+    background: url("../img/flecheSlider.png") no-repeat center top; }
+    .rs-thumb-wrap a.active img {
+      border: 2px solid #f2473f; }
+ /* .nivo-caption {
+    bottom: 70px;
+    left: 240px;
+    background: rgba(0, 0, 0, 0.7);
+    display: inline;
+    text-transform: uppercase;
+    color: #ef4d3a; 
+    font-weight: bold;
+    width: 960px;
+    position: relative; }*/
+
+/*.slider-wrapper {
   background: black;
   margin-bottom: 20px; }
 
@@ -204,7 +245,7 @@ input:focus {
   	color: #ef4d3a; 
   	font-weight: bold;
   	width: 960px;
-  	position: relative; }
+  	position: relative; }*/
 
 .pagination {
   text-align: center;

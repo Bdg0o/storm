@@ -100,7 +100,9 @@ function html5blank_header_scripts()
         
         wp_register_script('modernizr', 'http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js', array(), '2.6.2'); // Modernizr
         wp_enqueue_script('modernizr'); // Enqueue it!
-        
+
+        wp_register_script('refineslide', get_template_directory_uri() . '/js/jquery.refineslide.min.js', array(), '0.4.1'); // Custom scripts
+        wp_enqueue_script('refineslide'); // Enqueue it!
         wp_register_script('html5blankscripts', get_template_directory_uri() . '/js/scripts.js', array(), '1.0.0'); // Custom scripts
         wp_enqueue_script('html5blankscripts'); // Enqueue it!
     }
@@ -123,6 +125,12 @@ function html5blank_styles()
     
     wp_register_style('html5blank', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
     wp_enqueue_style('html5blank'); // Enqueue it!
+
+    wp_register_style('refineslidecss', get_template_directory_uri() . '/css/refineslide.css', array(), '1.0', 'all');
+    wp_enqueue_style('refineslidecss'); // Enqueue it!
+
+    // wp_register_style('refineslide-theme-dark', get_template_directory_uri() . '/css/refineslide-theme-dark.css', array(), '1.0', 'all');
+    // wp_enqueue_style('refineslide-theme-dark'); // Enqueue it!
 }
 
 // Register HTML5 Blank Navigation
@@ -397,41 +405,34 @@ remove_filter('the_excerpt', 'wpautop'); // Remove <p> tags from Excerpt altoget
 	Custom Post Types
 \*------------------------------------*/
 
-// Create 1 Custom Post type for a Demo, called HTML5-Blank
 function create_post_type_html5()
 {
-    register_taxonomy_for_object_type('category', 'html5-blank'); // Register Taxonomies for Category
-    register_taxonomy_for_object_type('post_tag', 'html5-blank');
-    register_post_type('html5-blank', // Register Custom Post Type
+    register_post_type('slider', // Register Custom Post Type
         array(
         'labels' => array(
-            'name' => __('HTML5 Blank Custom Post', 'html5blank'), // Rename these to suit
-            'singular_name' => __('HTML5 Blank Custom Post', 'html5blank'),
-            'add_new' => __('Add New', 'html5blank'),
-            'add_new_item' => __('Add New HTML5 Blank Custom Post', 'html5blank'),
-            'edit' => __('Edit', 'html5blank'),
-            'edit_item' => __('Edit HTML5 Blank Custom Post', 'html5blank'),
-            'new_item' => __('New HTML5 Blank Custom Post', 'html5blank'),
-            'view' => __('View HTML5 Blank Custom Post', 'html5blank'),
-            'view_item' => __('View HTML5 Blank Custom Post', 'html5blank'),
-            'search_items' => __('Search HTML5 Blank Custom Post', 'html5blank'),
-            'not_found' => __('No HTML5 Blank Custom Posts found', 'html5blank'),
-            'not_found_in_trash' => __('No HTML5 Blank Custom Posts found in Trash', 'html5blank')
+            'name' => __('Slider', 'slider'), // Rename these to suit
+            'singular_name' => __('Image', 'slider'),
+            'add_new' => __('Ajouter', 'slider'),
+            'add_new_item' => __('Ajouter', 'slider'),
+            'edit' => __('Editer', 'slider'),
+            'edit_item' => __('Editer l\'image', 'slider'),
+            'new_item' => __('Nouvelle image', 'slider'),
+            'view' => __('Voir', 'slider'),
+            'view_item' => __('Voir l\'image', 'slider'),
+            'search_items' => __('Rechercher une image', 'slider'),
+            'not_found' => __('Aucune image', 'slider'),
+            'not_found_in_trash' => __('Aucune image dans la corbeille', 'slider')
         ),
         'public' => true,
-        'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
+        'hierarchical' => false, // Allows your posts to behave like Hierarchy Pages
         'has_archive' => true,
         'supports' => array(
             'title',
             'editor',
-            'excerpt',
-            'thumbnail'
+            'thumbnail',
+            'page-attributes'
         ), // Go to Dashboard Custom HTML5 Blank post for supports
-        'can_export' => true, // Allows export in Tools > Export
-        'taxonomies' => array(
-            'post_tag',
-            'category'
-        ) // Add Category and Post Tags support
+        'can_export' => true // Allows export in Tools > Export
     ));
 }
 
@@ -492,73 +493,6 @@ function the_breadcrumbs() {
     elseif (is_author()) {echo"Author's archive: "; echo'</li>';}
     elseif (isset($_GET['paged']) && !empty($_GET['paged'])) {echo "Blogarchive: "; echo'';}
     elseif (is_search()) {echo"Search results: "; }
-}
-
-
-/* METABOX POUR LES JEUX */
-
-/* Define the custom box */
-
-add_action( 'add_meta_boxes', 'jeu_add_custom_box' );
-
-/* Do something with the data entered */
-add_action( 'save_post', 'jeu_save_postdata' );
-
-/* Adds a box to the main column on the Post and Page edit screens */
-function jeu_add_custom_box() {
-    $screens = array( 'post', 'page' );
-    foreach ($screens as $screen) {
-        add_meta_box(
-            'jeu_sectionid',
-            __( 'Jeu', 'jeu_textdomain' ),
-            'jeu_inner_custom_box',
-            $screen, 'side'
-        );
-    }
-}
-
-/* Prints the box content */
-function jeu_inner_custom_box( $post ) {
-  // Use nonce for verification
-  wp_nonce_field( plugin_basename( __FILE__ ), 'jeu_noncename' );
-
-  // The actual fields for data entry
-  // Use get_post_meta to retrieve an existing value from the database and use the value for the form
-  $value = get_post_meta( $post->ID, 'nom_jeu', true );
-  echo '<label for="jeu_new_field">';
-       _e("Nom du jeu : ", 'jeu_textdomain' );
-  echo '</label> ';
-  echo '<input type="text" id="jeu_nom" name="jeu_nom" value="'.esc_attr($value).'" size="25" />';
-}
-
-/* When the post is saved, saves our custom data */
-function jeu_save_postdata( $post_id ) {
-
-  // First we need to check if the current user is authorised to do this action. 
-  if ( 'page' == $_REQUEST['post_type'] ) {
-    if ( ! current_user_can( 'edit_page', $post_id ) )
-        return;
-  } else {
-    if ( ! current_user_can( 'edit_post', $post_id ) )
-        return;
-  }
-
-  // Secondly we need to check if the user intended to change this value.
-  if ( ! isset( $_POST['jeu_noncename'] ) || ! wp_verify_nonce( $_POST['jeu_noncename'], plugin_basename( __FILE__ ) ) )
-      return;
-
-  // Thirdly we can save the value to the database
-
-  //if saving in a custom table, get post_ID
-  $post_ID = $_POST['post_ID'];
-  //sanitize user input
-  $mydata = sanitize_text_field( $_POST['jeu_nom'] );
-
-  // Do something with $mydata 
-  // either using 
-  add_post_meta($post_ID, 'nom_jeu', $mydata, true) or
-    update_post_meta($post_ID, 'nom_jeu', $mydata);
-  // or a custom table (see Further Reading section below)
 }
 
 /* Ajout de Maxime */

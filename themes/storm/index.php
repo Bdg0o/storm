@@ -1,7 +1,28 @@
 <?php get_header(); ?>
 	
 	<!-- Affiche le slider -->
-	<?php nivo_slider(41); ?> 
+	<ul class="rs-slider">
+		<?php
+		$argslider = array('post_type' => array('slider'));
+		query_posts($argslider);
+		while ( have_posts() ) : the_post();
+		    echo '<li>';
+		    the_post_thumbnail( $size, $attr );
+		    ?>
+		    <div class="row">
+			    <div class="contenu">
+				    <?php
+				    echo '<h2>'. the_title() .'</h2>';
+				    the_content();
+				    ?>
+			    </div>
+		    </div>
+		    <?php
+		    echo '</li>';
+		endwhile;
+		wp_reset_query();
+		?>
+	</ul>
 	
 	<div class="row">
 		<!-- section -->
