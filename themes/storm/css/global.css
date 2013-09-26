@@ -66,7 +66,7 @@ input:focus {
   font-size: 1.2em;
   text-transform: uppercase;
   border-bottom: 1px solid #bababa;
-  margin: 0 0 20px 0; }
+  margin: 0 0 15px 0;  }
 
 .footer h5 {
   font-size: 1.2em;
@@ -354,7 +354,7 @@ input:focus {
     position: absolute;
     bottom: 2px;
     right: 30px; }
-  .home .main .post .post-edit-link:hover {
+  .post-edit-link:hover {
     color: #ef4d3a; }
     
 
@@ -366,10 +366,33 @@ input:focus {
   text-align: center; }
 
 /******* PAGE ARTICLE *******/
+.single .post {
+  margin-top: 20px;
+  position: relative; }
+
 .single .image-post-contener {
   height: 180px;
   overflow: hidden;
   text-align: center; }
+
+.single .attachment-post-thumbnail {
+  border: 3px solid #fff; 
+  box-shadow: 1px 1px 4px #c0c0c0;
+  margin-bottom: 10px; }
+
+.single .sidebar-widget {
+  margin-top: 10px; }
+  
+.single h1 a {
+  color: #fff;
+  margin-left: 12px;
+  font-size: 0.8em;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 0 5px; }
+  
+.single .comments {
+	display: none; }
+  
 
 /*------------------------------------*\
     IMAGES
