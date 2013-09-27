@@ -14,7 +14,24 @@ jQuery(function() {
 	// 	}
 	// }
 
-    jQuery('.rs-slider').refineSlide({
-            maxWidth: '100%' // set to native image width (px)
-    });
+	$(window).load(function() {
+	  // The slider being synced must be initialized first
+	  // $('#thumbs').flexslider({
+	  //   animation: "fade",
+	  //   controlNav: false,
+	  //   animationLoop: false,
+	  //   slideshow: false,
+	  //   itemWidth: 80,
+	  //   itemMargin: 5,
+	  //   asNavFor: '#slider'
+	  // });
+	   
+	  $('#slider').flexslider({
+	    animation: Modernizr.touch ? "slide" : "fade",
+	    controlNav: "thumbnails",
+	    directionNav : false,
+	    animationLoop: true,
+	    slideshow: true
+	  });
+	});
 });

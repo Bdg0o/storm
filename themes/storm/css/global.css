@@ -180,72 +180,71 @@ input:focus {
 
 /*NIVO SLIDER*/
 
-.rs-wrap
+#slider-wrapper
 {
   background: black;
   margin-bottom: 20px; 
 }
-.rs-slider 
+#slider
 {
-  padding : 0;
+  margin : 0;
 }
-.rs-slider li img
+#slider .slides li {
+  position: relative;
+}
+#slider .slides li img
 {
+  display : block;
   margin: auto;
 }
-
-.rs-thumb-wrap
+#slider .slides li .row
 {
-  margin: 0 5px;
+  position: absolute;
+  bottom : 10px;
+  left : 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+#slider .slides li .contenu
+{
+  background: rgba(0, 0, 0, 0.7);
+  text-transform: uppercase;
+  color: #ef4d3a; 
+  font-weight: bold;
+  display: inline-block;
+  padding : 10px;
 }
 
-.rs-thumb-wrap a img {
+
+#slider .flex-control-thumbs
+{
+}
+#slider .flex-control-thumbs {
+  text-align: center;
+}
+#slider .flex-control-thumbs li {
+  float: none;
+  width : auto;
+  margin: 0 5px;
+}
+#slider .flex-control-thumbs li img {
     border: 2px solid #222; }
-  .rs-thumb-wrap a img:hover {
+  #slider .flex-control-thumbs li img:hover {
     border: 2px solid #e6e6e6; }
-  .rs-thumb-wrap a.active {
+  #slider .flex-control-thumbs li {
+    width : auto;
     display: inline-block;
     padding-top: 8px;
-    background: url("../img/flecheSlider.png") no-repeat center top; }
-    .rs-thumb-wrap a.active img {
-      border: 2px solid #f2473f; }
- /* .nivo-caption {
-    bottom: 70px;
-    left: 240px;
-    background: rgba(0, 0, 0, 0.7);
-    display: inline;
-    text-transform: uppercase;
-    color: #ef4d3a; 
-    font-weight: bold;
-    width: 960px;
-    position: relative; }*/
-
-/*.slider-wrapper {
-  background: black;
-  margin-bottom: 20px; }
-
-.nivo-controlNav .nivo-control {
-  margin: 0 5px; }
-  .nivo-controlNav .nivo-control img {
-    border: 2px solid #222; }
-  .nivo-controlNav .nivo-control img:hover {
-  	border: 2px solid #e6e6e6; }
-  .nivo-controlNav .nivo-control.active {
-    display: inline-block;
-    padding-top: 8px;
-    background: url("../img/flecheSlider.png") no-repeat center top; }
-    .nivo-controlNav .nivo-control.active img {
-      border: 2px solid #f2473f; }
-  .nivo-caption {
-  	bottom: 70px;
-  	left: 240px;
-  	background: rgba(0, 0, 0, 0.7);
-  	display: inline;
-  	text-transform: uppercase;
-  	color: #ef4d3a; 
-  	font-weight: bold;
-  	width: 960px;
-  	position: relative; }*/
+    /*background: url("../img/flecheSlider.png") no-repeat center top; */
+  }
+    #slider .flex-control-thumbs li img.flex-active {
+      border: 2px solid #f2473f; 
+      position : relative;
+    }
+    
 
 .pagination {
   text-align: center;
