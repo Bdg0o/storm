@@ -60,8 +60,8 @@
     "date": "2013-09-27T20:32:14.673Z"
   },
   "storm/css/global.css": {
-    "size": 16417,
-    "date": "2013-09-28T17:35:49.544Z"
+    "size": 16495,
+    "date": "2013-09-28T18:22:25.828Z"
   },
   "storm/favicon.png": {
     "size": 1897,
@@ -76,12 +76,12 @@
     "date": "2013-09-28T10:59:17.849Z"
   },
   "storm/front-page.php": {
-    "size": 1392,
-    "date": "2013-09-28T17:51:36.607Z"
+    "size": 1150,
+    "date": "2013-09-28T18:24:30.761Z"
   },
   "storm/functions.php": {
-    "size": 18410,
-    "date": "2013-09-28T17:54:12.652Z"
+    "size": 18404,
+    "date": "2013-09-28T18:15:31.366Z"
   },
   "storm/header.php": {
     "size": 3280,
@@ -272,8 +272,8 @@
     "date": "2013-09-27T20:32:35.556Z"
   },
   "storm/loop.php": {
-    "size": 1499,
-    "date": "2013-09-27T20:32:35.925Z"
+    "size": 1554,
+    "date": "2013-09-28T18:27:46.719Z"
   },
   "storm/normalize.css": {
     "size": 9066,

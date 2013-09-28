@@ -10,36 +10,35 @@
 			</a>
 		<?php endif; ?>
 		<!-- /post thumbnail -->
-		
-		<!-- post title -->
-		<h2>
-			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-				<?php 
-					$jeu = get_post_meta($post->ID, "nom_jeu", true);
+		<div class="content clear">
+			<!-- post title -->
+			<h2>
+				<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+					<?php 
+						$jeu = get_post_meta($post->ID, "nom_jeu", true);
 
-					if(!empty($jeu))
-					{
-						echo '<span class="jeu">'. $jeu .'</span>, ';
-					}
+						if(!empty($jeu))
+						{
+							echo '<span class="jeu">'. $jeu .'</span>, ';
+						}
 
-					?>
-				<?php the_title(); ?>
-			</a>
-		</h2>
-		<!-- /post title -->
-		
-		<!-- post details -->
-		<span class="date">Le <?php the_time('d/m/Y'); ?></span>
-		<span class="author"><?php _e( 'Published by', 'html5blank' ); ?> <?php the_author_posts_link(); ?></span>
-		<span class="category"><?php the_category(', ') ?></span>
-		<!-- /post details -->
-		
-		<?php html5wp_excerpt('html5wp_index'); // Build your custom callback length in functions.php ?>
-
+						?>
+					<?php the_title(); ?>
+				</a>
+			</h2>
+			<!-- /post title -->
+			
+			<!-- post details -->
+			<span class="date">Le <?php the_time('d/m/Y'); ?></span>
+			<span class="author"><?php _e( 'Published by', 'html5blank' ); ?> <?php the_author_posts_link(); ?></span>
+			<span class="category"><?php the_category(', ') ?></span>
+			<!-- /post details -->
+			
+			<?php html5wp_excerpt('html5wp_index'); // Build your custom callback length in functions.php ?>	
+		</div>
 		<div class="comment"><?php comments_popup_link('0', '1', '%'); ?></div>
 		
 		<?php edit_post_link(); ?>
-		
 	</article>
 	<!-- /article -->
 	

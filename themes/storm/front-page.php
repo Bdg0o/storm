@@ -26,21 +26,10 @@
 				    <?php
 				    echo '</li>';
 				endwhile;
-				?>
-			</ul>
-		</div>
-	<!-- 	<div id="thumbs">
-		  	<ul class="slides">
-				<?php
-				while ( have_posts() ) : the_post();
-				    echo '<li>';
-				    the_post_thumbnail('slider-thumb');
-				    echo '</li>';
-				endwhile;
 				wp_reset_query();
 				?>
 			</ul>
-		</div> -->
+		</div>
 	</div>
 	
 	<div class="row">
