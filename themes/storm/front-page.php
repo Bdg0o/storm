@@ -15,7 +15,10 @@
 				    <div class="row">
 					    <div class="contenu">
 						    <?php
-						    echo '<h2>'. the_title() .'</h2>';
+						    echo '<h2>';
+						    	the_title();
+    						echo '</h2>';
+
 						    the_content();
 						    ?>
 					    </div>

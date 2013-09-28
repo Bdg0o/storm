@@ -285,14 +285,27 @@ input:focus {
 }
 #slider .slides li .contenu
 {
-  background: rgba(0, 0, 0, 0.7);
-  text-transform: uppercase;
   color: #ef4d3a; 
-  font-weight: bold;
   display: inline-block;
-  padding : 10px;
+  margin-bottom: 6px;
 }
 
+#slider .slides li .contenu h2 {
+	background: rgba(0, 0, 0, 0.7);
+	padding : 3px 8px 1px 8px;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 1.3em;
+	margin: 0 0 -1px 0;
+}
+
+#slider .slides li .contenu p {
+	background: rgba(0, 0, 0, 0.7);
+	margin: 0em;
+	color: white;
+	padding : 0px 8px 3px 8px;
+	display: inline;
+}
 
 #slider .flex-control-thumbs
 {
