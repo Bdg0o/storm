@@ -29,7 +29,7 @@ if (function_exists('add_theme_support'))
     add_image_size('slider-thumb', 80, 55, true);
 
     add_image_size('loop-thumb', 235, 135, true);
-    add_image_size('image-post', 640, 200, true);
+    add_image_size('image-post', 640, 250, true);
 
     // Add Support for Custom Header - Uncomment below if you're going to use
     /*add_theme_support('custom-header', array(

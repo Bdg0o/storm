@@ -396,7 +396,7 @@ input:focus {
 .home .main .post {
   border-bottom: 1px solid #bababa;
   margin-bottom: 15px;
-  padding-bottom: 25px;
+  padding-bottom: 15px;
   position: relative; }
   .home .main .post .wp-post-image {
     float: left;
@@ -430,7 +430,7 @@ input:focus {
   .home .main .post .category a:hover {
   	text-decoration: underline; }
   .home .main .post .comment {
-  	margin-top: 7px;
+  	margin-top: -3px;
     float: right;
     background: #f2473f; }
     .home .main .post .comment a {
@@ -477,7 +477,7 @@ input:focus {
   margin-top: 10px; }
 
 .single h1 {
-  font-size: 1.48em;
+  font-size: 1.3em;
   margin: 0;
   padding: 0;
   letter-spacing: 0.03em; }
@@ -488,13 +488,13 @@ input:focus {
   background: rgba(0, 0, 0, 0.7);
   padding: 0px 6px 0px 6px;
   position: absolute;
-  top: 160px; }
+  top: 197px; }
   
 .single .bg-date-author {
   font-size: 14px;
   padding: 0px 6px 2px 6px;
   display: inline;
-  top: 189px; }
+  top: 222px; }
 
 .single .bg-date-author .author a {
   color: #ef4d3a;
@@ -564,17 +564,17 @@ input:focus {
     MISC
 \*------------------------------------*/
 ::selection {
-  background: #04A4CC;
+  background: #ef4d3a;
   color: #FFF;
   text-shadow: none; }
 
 ::-webkit-selection {
-  background: #04A4CC;
+  background: #ef4d3a;
   color: #FFF;
   text-shadow: none; }
 
 ::-moz-selection {
-  background: #04A4CC;
+  background: #ef4d3a;
   color: #FFF;
   text-shadow: none; }
 
