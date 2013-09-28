@@ -26,12 +26,26 @@ jQuery(function() {
 	  //   asNavFor: '#slider'
 	  // });
 	   
+	  // SLIDER HOME
 	  $('#slider').flexslider({
 	    animation: Modernizr.touch ? "slide" : "fade",
 	    controlNav: "thumbnails",
 	    directionNav : false,
 	    animationLoop: true,
 	    slideshow: true
+	  });
+
+
+	  // POPUP CONNEXION
+	  $('.open-popup-link').magnificPopup({
+		  type:'inline',
+		  removalDelay: 500,
+		  midClick: true, // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+	  	  callbacks: {
+		    beforeOpen: function() {
+		       this.st.mainClass = this.st.el.attr('data-effect');
+		    }
+		  },
 	  });
 	});
 });

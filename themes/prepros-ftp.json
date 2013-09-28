@@ -60,8 +60,8 @@
     "date": "2013-09-27T20:32:14.673Z"
   },
   "storm/css/global.css": {
-    "size": 14221,
-    "date": "2013-09-27T22:50:09.848Z"
+    "size": 16154,
+    "date": "2013-09-28T10:39:20.851Z"
   },
   "storm/favicon.png": {
     "size": 1897,
@@ -72,20 +72,20 @@
     "date": "2013-09-27T20:32:16.494Z"
   },
   "storm/footer.php": {
-    "size": 1601,
-    "date": "2013-09-27T20:32:16.854Z"
+    "size": 2605,
+    "date": "2013-09-28T10:56:47.040Z"
   },
   "storm/front-page.php": {
     "size": 1362,
     "date": "2013-09-27T21:41:25.521Z"
   },
   "storm/functions.php": {
-    "size": 18012,
-    "date": "2013-09-27T22:48:16.987Z"
+    "size": 18404,
+    "date": "2013-09-28T10:05:25.375Z"
   },
   "storm/header.php": {
-    "size": 1894,
-    "date": "2013-09-27T20:32:17.926Z"
+    "size": 2995,
+    "date": "2013-09-28T10:39:21.211Z"
   },
   "storm/img/bg.jpg": {
     "size": 33575,
@@ -220,8 +220,8 @@
     "date": "2013-09-27T20:32:30.500Z"
   },
   "storm/js/scripts.js": {
-    "size": 927,
-    "date": "2013-09-27T22:45:08.440Z"
+    "size": 1322,
+    "date": "2013-09-28T10:56:47.758Z"
   },
   "storm/js/scripts.min.js": {
     "size": 171,
@@ -336,7 +336,15 @@
     "date": "2013-09-27T20:57:19.894Z"
   },
   "storm/js/min/scripts.min.js": {
-    "size": 186,
-    "date": "2013-09-27T22:45:08.087Z"
+    "size": 352,
+    "date": "2013-09-28T10:56:47.404Z"
+  },
+  "storm/css/magnific-popup.css": {
+    "size": 7514,
+    "date": "2013-09-28T10:05:25.005Z"
+  },
+  "storm/js/jquery.magnific-popup.min.js": {
+    "size": 20674,
+    "date": "2013-09-28T10:05:26.147Z"
   }
 }

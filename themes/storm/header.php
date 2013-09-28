@@ -41,9 +41,27 @@
 						</a>
 					</div>
 					<div id="connection">
-						<a href="#" class="connexion">Connexion</a> / <a href="#" class="connexion">Inscription</a>
+						<a href="#connexion-popup" class="connexion open-popup-link" data-effect="mfp-zoom-out">Connexion</a> / <a href="#inscription-popup" class="inscription open-popup-link" data-effect="mfp-zoom-out">Inscription</a>
 					</div>
 					<!-- /logo -->
+					<div id="connexion-popup" class="white-popup mfp-hide mfp-with-anim">
+					 	<?php wp_login_form(); ?>
+					</div>
+					<div id="inscription-popup" class="white-popup mfp-hide mfp-with-anim">
+					    <div id="register-form">  
+					        <div class="title">  
+					            <h1>S'inscrire</h1>
+					        </div>  
+				            <form action="<?php echo site_url('wp-login.php?action=register', 'login_post') ?>" method="post">  
+					            <input type="text" name="user_login" value="Login" id="user_login" class="input" />  
+					            <input type="text" name="user_email" value="E-Mail" id="user_email" class="input"  />  
+					                <?php do_action('register_form'); ?>  
+					                <input type="submit" value="S'inscrire" id="register" />  
+					            <hr />  
+					            <p class="statement">Un mot de passe vous sera envoyé par mail.</p>    
+				            </form>  
+					    </div> 
+					</div>
 			</header>
 			<!-- /header -->
 			<!-- nav -->
