@@ -107,7 +107,7 @@ input:focus {
   width: 200px;
   margin: 20px 0; }
 
-#connection {
+#connexion {
   display: inline-block;
   background: black;
   float: right;
@@ -116,10 +116,10 @@ input:focus {
   color: white;
   padding: 5px 10px;
   font-size: 0.9em; }
-.connexion {
+#connexion a {
   color: #fff;
   text-decoration: none; } 
-.connexion:hover {
+#connexion a:hover {
   color: #ef4d3a; }
 
   .white-popup {
