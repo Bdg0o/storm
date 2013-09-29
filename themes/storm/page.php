@@ -11,8 +11,6 @@
 	<div class="row">
 		<!-- section -->
 		<section class="main col_2tiers" role="main">
-
-			<?php if(function_exists('the_breadcrumbs')) the_breadcrumbs(); ?>
 		
 			<h1><?php the_title(); ?></h1>
 		

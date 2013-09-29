@@ -80,8 +80,8 @@
     "date": "2013-09-29T10:09:52.707Z"
   },
   "storm/header.php": {
-    "size": 4706,
-    "date": "2013-09-29T10:13:50.836Z"
+    "size": 3371,
+    "date": "2013-09-29T15:58:17.714Z"
   },
   "storm/img/bg.jpg": {
     "size": 33575,
@@ -280,8 +280,8 @@
     "date": "2013-09-27T20:32:36.669Z"
   },
   "storm/page.php": {
-    "size": 967,
-    "date": "2013-09-27T20:32:37.039Z"
+    "size": 896,
+    "date": "2013-09-29T15:58:18.068Z"
   },
   "storm/pagination.php": {
     "size": 104,
@@ -1027,12 +1027,16 @@
     "size": 1130,
     "date": "2013-09-29T08:13:46.192Z"
   },
-  "storm/page-front-forums.php": {
-    "size": 658,
-    "date": "2013-09-29T08:13:46.967Z"
-  },
   "storm/css/bbpress.css": {
     "size": 31135,
     "date": "2013-09-29T08:24:06.589Z"
+  },
+  "storm/archive-forum.php": {
+    "size": 3929,
+    "date": "2013-09-29T17:06:46.043Z"
+  },
+  "storm/bbpress/content-archive-forum.php": {
+    "size": 444,
+    "date": "2013-09-29T16:09:45.963Z"
   }
 }
