@@ -37,9 +37,9 @@
 		<section class="main col_2tiers" role="main">
 		
 			<h1><?php _e( 'News', 'html5blank' ); ?></h1>
-
-			<?php get_template_part('loop'); ?>
-			
+			<div class="liste-articles">
+				<?php get_template_part('loop'); ?>
+			</div>
 			<?php get_template_part('pagination'); ?>
 		
 		</section>

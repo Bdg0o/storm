@@ -82,7 +82,7 @@ input:focus {
 /*------------------------------------*\
     NIVEAUX DE TITRE
 \*------------------------------------*/
-.main h1, .sidebar h3 {
+.main h1, .sidebar h3, #connexion-popup .title h1 {
   color: #f2473f;
   font-size: 1.2em;
   text-transform: uppercase;
@@ -145,6 +145,53 @@ input:focus {
   text-decoration: none; } 
 #connexion a:hover {
   color: #ef4d3a; }
+
+#connexion-popup .title,
+#connexion-popup .login-username, 
+#connexion-popup .login-password, 
+#connexion-popup .login-remember,
+#connexion-popup .login-submit {
+	margin : auto;
+	width: 200px;
+	margin-bottom: 10px;
+}
+
+#connexion-popup .input {
+	display : block;
+	background: #222222;
+	border: 1px solid #646464;
+	border-radius: 5px;
+	color: white;
+	margin-top: 2px;
+	width: 200px;
+	padding: 10px;
+	-webkit-transition: all 0.3s ease-in;
+	-moz-transition: all 0.3s ease-in;
+	-ms-transition: all 0.3s ease-in;
+	-o-transition: all 0.3s ease-in;
+	transition: all 0.3s ease-in;
+}
+#connexion-popup .input:focus
+{
+	background : #464646;
+}	
+#connexion-popup .button-primary
+{
+	display: block;
+	background: #222222;
+	border: 1px solid #646464;
+	border-radius: 5px;
+	color: white;
+	margin-top: 2px;
+	width: 200px;
+	padding-left: 8px;
+	-webkit-transition: all 0.3s ease-in;
+	-moz-transition: all 0.3s ease-in;
+	-ms-transition: all 0.3s ease-in;
+	-o-transition: all 0.3s ease-in;
+	transition: all 0.3s ease-in;
+	padding: 10px;
+}
 
   .white-popup {
     position: relative;
@@ -249,7 +296,9 @@ input:focus {
     width: 250px;
     font-size: 0.8em;
     text-align: right;
-    margin: 5px 0; }
+    margin: 5px 0; 
+  	font: 300 11px/1.4 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
     .nav .search .search-input {
       background: #222222;
       border: 1px solid #646464;
@@ -258,14 +307,30 @@ input:focus {
       height: 25px;
       margin-top: 2px;
       width: 120px;
-      padding-left: 8px; }
+      padding-left: 8px; 
+      -webkit-transition: all 0.3s ease-in;
+	  -moz-transition: all 0.3s ease-in;
+	  -ms-transition: all 0.3s ease-in;
+	  -o-transition: all 0.3s ease-in;
+	  transition: all 0.3s ease-in;
+    }
+    .nav .search .search-input:focus
+    {
+		background : #464646;
+    }
     .nav .search .search-submit {
       border: 1px solid #646464;
       border-radius: 0 5px 5px 0;
       background: #f2473f;
       color: white;
       height: 29px;
-      margin-top: 2px; }
+      margin-top: 2px; 
+	  -webkit-transition: all 0.3s ease-in;
+	  -moz-transition: all 0.3s ease-in;
+	  -ms-transition: all 0.3s ease-in;
+	  -o-transition: all 0.3s ease-in;
+	  transition: all 0.3s ease-in;
+  	}
     .nav .search .search-submit:hover {
       background: #e6e6e6;
       color: #333; }
@@ -282,7 +347,6 @@ input:focus {
 #slider-wrapper
 {
   background: black;
-  margin-bottom: 20px; 
 }
 #slider
 {
@@ -380,7 +444,9 @@ input:focus {
 
 /* sidebar */
 .sidebar {
-  vertical-align: top; }
+  vertical-align: top; 
+  margin-top: 20px;
+  }
   .sidebar .sidebar-widget {
     padding-left: 20px; }
 .sidebar-widget ul {
@@ -398,13 +464,12 @@ input:focus {
 
 /* footer */
 .footer {
-  font-family: arial, sans-serif;
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   clear: both;
   border-top: 2px solid #f2473f;
   background: black;
   color: white;
-  min-height: 300px;
-  margin-bottom: -14px;
+  padding-bottom: 10px;
   position: relative; }
   .footer a {
     color: #f2473f; }
@@ -416,20 +481,27 @@ input:focus {
     .footer .listeArchives li a:hover {
 	  color: #ef4d3a; }
   .footer .copyright {
-	  position: absolute;
-	  bottom: 0; }
+	  margin-top: 50px;
+	  margin-bottom: 0;
+	  text-align: center;
+	  font-size: 0.8em; }
 	  
 
 /*------------------------------------*\
     PAGES
 \*------------------------------------*/
-/******* HOME PAGE *******/
-.home .main .post {
+
+/* LISTE D'ARTICLES (HOME, CATEGORY, ARCHIVE) */ 
+
+  .main {
+  	margin-top: 20px;
+  }
+  .main .liste-articles .post {
   border-bottom: 1px solid #bababa;
   margin-bottom: 15px;
   padding-bottom: 15px;
   position: relative; }
-  .home .main .post .wp-post-image {
+  .main .liste-articles .post .wp-post-image {
     float: left;
     margin-right: 10px;
     border: 3px solid #fff;
@@ -440,51 +512,51 @@ input:focus {
 	  -o-transition: all 0.3s ease-in;
 	  transition: all 0.3s ease-in;
 	}
-  .home .main .post .wp-post-image:hover {
+  .main .liste-articles .post .wp-post-image:hover {
   	border: 3px solid #ef4d3a;
-  	box-shadow: none; }
+  	box-shadow: none; 
+  }
 
-  .home .main .post .content {
+  .main .liste-articles .post .content {
     margin-left: 250px;
   }
-  .home .main .post p {
+  .main .liste-articles .post p {
 	margin: 0.3em 0 0.8em; }
-  .home .main .post h2 {
+  .main .liste-articles .post h2 {
     font-size: 1.2em;
     margin: 0; }
-  .home .main .post h2 a:hover {
+  .main .liste-articles .post h2 a:hover {
   	color: #ef4d3a;}
-    .home .main .post h2 .jeu {
+    .main .liste-articles .post h2 .jeu {
       font-style: italic; }
-  .home .main .post .date, .home .main .post .author, .home .main .post .category {
+  .main .liste-articles .post .date, .main .liste-articles .post .author, .main .liste-articles .post .category {
     font-size: 0.85em; }
-  .home .main .post .author a {
+  .main .liste-articles .post .author a {
   	font-style: italic;
   	font-weight: 500;
   	color: #222; }
-  .home .main .post .author a:hover {
+  .main .liste-articles .post .author a:hover {
    	color: #ef4d3a; }
-  .home .main .post .category a:hover {
+  .main .liste-articles .post .category a:hover {
   	text-decoration: underline; }
-  .home .main .post .comment {
+  .main .liste-articles .post .comment {
   	margin-top: -3px;
     float: right;
     background: #f2473f; }
-    .home .main .post .comment a {
+    .main .liste-articles .post .comment a {
       color: white;
       padding: 5px 8px; }
-  .home .main .post .view-article {
+  .main .liste-articles .post .view-article {
     color: #f2473f; }
-  .home .main .post .view-article:hover {
+  .main .liste-articles .post .view-article:hover {
 	border-bottom: 1px solid #ef4d3a; }
-  .home .main .post .post-edit-link {
+  .main .liste-articles .post .post-edit-link {
     font-size: 0.8em;
     position: absolute;
     bottom: 2px;
     right: 30px; }
-  .post-edit-link:hover {
+  .main .liste-articles .post .post-edit-link:hover {
     color: #ef4d3a; }
-    
 
 /******* PAGE TYPE *******/
 .page .sidebar {

@@ -54,8 +54,7 @@
 
 				<!-- copyright -->
 				<p class="copyright">
-					&copy; <?php echo date("Y"); ?> Copyright <?php bloginfo('name'); ?>. <?php _e('Powered by', 'html5blank'); ?> 
-					<a href="//wordpress.org" title="WordPress">WordPress</a>.
+					&copy; <?php echo date("Y"); ?> Copyright <?php bloginfo('name'); ?>. Tous droits réservés. <br /> Site réalisé par <a href="http://maximegengler.be" title="Maxime Gengler" target="_blank">Maxime Gengler</a> et <a href="http://antoine-royer.me" title="Antoine Royer" target="_blank">Antoine Royer</a>, propulsé par <a href="//wordpress.org" target="_blank" title="WordPress">WordPress</a>.
 				</p>
 				<!-- /copyright -->
 
