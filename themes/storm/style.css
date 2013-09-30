@@ -82,7 +82,7 @@ input:focus {
 /*------------------------------------*\
     NIVEAUX DE TITRE
 \*------------------------------------*/
-.main h1, .sidebar h3, #connexion-popup .title h1 {
+.main h1, .sidebar h3, #connexion-popup .title h1, #inscription-popup .title h1 {
   color: #f2473f;
   font-size: 1.2em;
   text-transform: uppercase;
@@ -156,7 +156,7 @@ input:focus {
 	margin-bottom: 10px;
 }
 
-#connexion-popup .input {
+#connexion-popup .input, #inscription-popup .input {
 	display : block;
 	background: #fff;
 	border: 1px solid #ccc;
@@ -175,7 +175,7 @@ input:focus {
 {
 	background : #fff;
 }	
-#connexion-popup .button-primary
+#connexion-popup .button-primary, #inscription-popup #register
 {
 	display: block;
 	background: #ef4d3a;
@@ -191,6 +191,22 @@ input:focus {
 	-o-transition: all 0.2s ease-in;
 	transition: all 0.2s ease-in;
 	padding: 10px;
+}
+
+#connexion-popup, #inscription-popup {
+	background: url("img/bg.jpg");
+	width: 250px;
+	border-radius: 3px;
+}
+
+#connexion-popup .button-primary:hover, #inscription-popup #register:hover {
+	background: #333;
+	color: #fff;
+	border: none;
+}
+
+.mfp-close-btn-in .mfp-close {
+	margin: -10px -10px 0 0;
 }
 
   .white-popup {
@@ -300,7 +316,7 @@ input:focus {
   	font: 300 11px/1.4 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   }
     .nav .search .search-input {
-      background: #222222;
+      background: #222;
       border: 1px solid #646464;
       border-radius: 5px 0 0 5px;
       color: white;
@@ -316,7 +332,7 @@ input:focus {
     }
     .nav .search .search-input:focus
     {
-		background : #464646;
+		background : #222;
     }
     .nav .search .search-submit {
       border: 1px solid #646464;
@@ -875,31 +891,32 @@ li.bbp-footer {
 .bbp-topic-permalink:hover {
   color: #ef4d3a; }
 
-.bbp-admin-links a:hover {
+.bbp-admin-links a:hover, .favorite-toggle:hover, .subscription-toggle:hover {
   color: #ef4d3a; }
 
 #bbpress-forums div.bbp-reply-author a.bbp-author-name {
   margin-top: 4px;
   color: #222; }
-
-
-/*------------------------------------*\
-    POP UP CONNEXION
-\*------------------------------------*/
-
-#connexion-popup, #inscription-popup {
-	background: url("img/bg.jpg");
-	width: 250px;
-	border-radius: 3px;
+  
+#bbp_reply_submit {
+	display: block;
+	background: #ef4d3a;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	margin-top: 2px;
+	width: 80px;
+	padding-left: 8px;
+	-webkit-transition: all 0.2s ease-in;
+	-moz-transition: all 0.2s ease-in;
+	-ms-transition: all 0.2s ease-in;
+	-o-transition: all 0.2s ease-in;
+	transition: all 0.2s ease-in;
+	padding: 10px;
 }
 
-#connexion-popup .button-primary:hover {
+#bbp_reply_submit:hover {
 	background: #333;
 	color: #fff;
 	border: none;
 }
-
-.mfp-close-btn-in .mfp-close {
-	margin: -10px -10px 0 0;
-}
-
