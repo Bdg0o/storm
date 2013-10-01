@@ -92,6 +92,8 @@ input:focus {
 }
 
 .footer h5 {
+  width: 200px;
+  border-bottom: 1px solid #663333;
   font-size: 1.2em;
   margin: 20px 0 10px 0;
   font-weight: normal;
@@ -480,7 +482,8 @@ input:focus {
 	color: #f2473f; }
 .sidebar-widget #live_embed_player_flash {
 	border: 3px solid #fff; 
-	box-shadow: 1px 1px 4px #c0c0c0; }
+	box-shadow: 1px 1px 4px #c0c0c0;
+	margin-bottom: 15px; }
 
 /* footer */
 .footer {
@@ -506,6 +509,41 @@ input:focus {
 	  text-align: center;
 	  font-size: 0.8em; }
 	  
+.footer .twitter, .footer .facebook, .footer .rss {
+	height: 28px;
+	width: 28px;
+	text-indent: -9999px;
+	display: block;
+	float: left;
+	margin-right: 10px;
+	background: url("img/twitter.png") 0 0;
+	-webkit-transition: none;
+	-moz-transition: none;
+	-ms-transition: none;
+	-o-transition: none;
+	transition: none;
+}
+
+
+.footer .facebook {
+	background: url("img/facebook.png") 0 0;
+}
+
+.footer .rss {
+	background: url("img/rss.png") 0 0;
+}
+
+.footer .twitter:hover {
+	background: url("img/twitter.png") 0 -28px;
+}
+
+.footer .facebook:hover {
+	background: url("img/facebook.png") 0 -28px;
+}
+
+.footer .rss:hover {
+	background: url("img/rss.png") 0 -28px;
+}  
 
 /*------------------------------------*\
     PAGES
@@ -543,7 +581,7 @@ input:focus {
   .main .liste-articles .post p {
 	margin: 0.3em 0 0.8em; }
   .main .liste-articles .post h2 {
-    font-size: 1.2em;
+    font-size: 1.3em;
     margin: 0; }
   .main .liste-articles .post h2 a:hover {
   	color: #ef4d3a;}
@@ -552,9 +590,8 @@ input:focus {
   .main .liste-articles .post .date, .main .liste-articles .post .author, .main .liste-articles .post .category {
     font-size: 0.85em; }
   .main .liste-articles .post .author a {
-  	font-style: italic;
   	font-weight: 500;
-  	color: #222; }
+  	color: #000; }
   .main .liste-articles .post .author a:hover {
    	color: #ef4d3a; }
   .main .liste-articles .post .category a:hover {
@@ -603,8 +640,8 @@ input:focus {
   width: 100%;
 }
 
-.single .sidebar-widget {
-  margin-top: 10px; }
+.single .sidebar {
+  margin-top: 11px; }
 
 .single h1 {
   font-size: 1.3em;
@@ -644,6 +681,7 @@ input:focus {
 .single .post img {
   border: 3px solid #fff; 
   box-shadow: 1px 1px 4px #c0c0c0; }
+  
 
 .single p {
   color: #333;
@@ -919,4 +957,15 @@ li.bbp-footer {
 	background: #333;
 	color: #fff;
 	border: none;
+}
+
+
+/*------------------------------------*\
+    CSS SPECIAL FIREFOX
+\*------------------------------------*/
+
+@-moz-document url-prefix() {
+  #slider-wrapper {
+  	margin-top: -5px;
+  }
 }

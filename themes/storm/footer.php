@@ -12,9 +12,9 @@
 					</div>
 					<div class="col_tier">
 						<h5>Suivez-nous :</h5>
-						<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/twitter.png" alt="Twitter"></a>
-						<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/facebook.png" alt="Facebook"></a>
-						<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/rss.png" alt="Flux RSS"></a>
+						<a href="https://twitter.com/Storm_commu" class="twitter" alt="Twitter">twitter</a>
+						<a href="https://www.facebook.com/pages/Storm/1420891144789352?fref=ts" class="facebook" alt="Facebook">facebook</a>
+						<a href="../feed/" class="rss" alt="rss">rss</a>
 					</div>
 					<div class="col_tier">
 						<h5>Twittes :</h5>
