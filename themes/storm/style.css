@@ -888,10 +888,10 @@ li.bbp-footer {
   font-weight: 500; } 
 
 .bbp-forum-info .bbp-forum-title:hover,
-.bbp-topic-permalink:hover {
-  color: #ef4d3a; }
-
-.bbp-admin-links a:hover, .favorite-toggle:hover, .subscription-toggle:hover {
+.bbp-topic-permalink:hover,
+.bbp-admin-links a:hover, 
+.favorite-toggle:hover, 
+.subscription-toggle:hover {
   color: #ef4d3a; }
 
 #bbpress-forums div.bbp-reply-author a.bbp-author-name {
