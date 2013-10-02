@@ -131,7 +131,9 @@ input:focus {
 .logo {
   display: inline-block;
   width: 200px;
-  margin: 20px 0; }
+  margin: 20px 0;
+  position: relative;
+  z-index: 10; }
 
 #connexion {
   display: inline-block;
@@ -936,13 +938,13 @@ li.bbp-footer {
   margin-top: 4px;
   color: #222; }
   
-#bbp_reply_submit {
+#bbp_reply_submit, #bbp_topic_submit {
 	display: block;
 	background: #ef4d3a;
 	color: #fff;
 	border: none;
 	border-radius: 5px;
-	margin-top: 2px;
+	margin: 2px 0 10px 0;
 	width: 80px;
 	padding-left: 8px;
 	-webkit-transition: all 0.2s ease-in;
@@ -953,11 +955,24 @@ li.bbp-footer {
 	padding: 10px;
 }
 
-#bbp_reply_submit:hover {
+#bbp_reply_submit:hover, #bbp_topic_submit:hover {
 	background: #333;
 	color: #fff;
 	border: none;
 }
+
+/*------------------------------------*\
+    ARCHIVE PAGE
+\*------------------------------------*/
+
+.archive .main, .search-results .main {
+	margin-top: 23px;
+}
+
+/*------------------------------------*\
+    404
+\*------------------------------------*/
+
 
 
 /*------------------------------------*\
