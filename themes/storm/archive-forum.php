@@ -29,20 +29,22 @@
 								<?php bbp_forum_title(); ?>
 								<span class="count-topic"><?php bbp_forum_topic_count(); ?></span>
 							</span>
-							<?php bbp_list_forums(array(
-								'before'            => '<ul class="bbp-forums-list">',
-								'after'             => '</ul>',
-								'link_before'       => '<li class="bbp-forum bbp-forum-title forum">',
-								'link_after'        => '</li>',
-								'count_before'      => '<span class="count-topic">',
-								'count_after'       => '</span>',
-								'count_sep'         => '',
-								'separator'         => '',
-								'show_topic_count'  => true,
-								'show_reply_count'  => false,
-							)); ?>
-							
-							<a class="voirTout" href="<?php bbp_forum_permalink(); ?>" title="<?php bbp_forum_title(); ?>">Voir tout</a>
+							<?php
+							$sub_forums = bbp_forum_get_subforums(  bbp_get_forum_id() );
+							if ( !empty( $sub_forums ) ) {
+								echo '<ul class="bbp-forums-list forum-enfant">';
+								foreach ( $sub_forums as $sub_forum ) { ?>
+									<li class="bbp-forum bbp-forum-title forum" data-id="<?php echo $sub_forum->ID; ?>">
+										<span class="bbp-forum-link">
+											<?php echo bbp_get_forum_title( $sub_forum->ID ); ?>
+											<span class="count-topic"><?php echo bbp_get_forum_topic_count( $sub_forum->ID ); ?></span>
+										</span>
+									</li>
+								<?php
+								}
+								echo '</ul>';
+							}
+							?>
 						</li>
 					</ul><!-- #bbp-forum-<?php bbp_forum_id(); ?> -->
 
@@ -114,18 +116,25 @@
 			<script>
 				$(function(){
 					$('.sidebar .forum .bbp-forum-title').click(function(){
-						var id = $(this).closest('.forum').data('id');
-						if(id == 0)
+						var forum = $(this).closest('.forum');
+						var arrayID = [forum.data('id')];
+						forum.find('.forum').each(function(index,elem){
+							arrayID.push($(elem).data('id'));
+						});
+
+						if(forum.data('id') == 0)
 						{
 							$('#bbpress-forums .topic').show('fast');
 						}
 						else
 						{
 							$('#bbpress-forums').find('.topic').hide('fast');
-							$('#bbpress-forums').find('.topic[data-parent="'+ id +'"]').show('fast');
+							$('#bbpress-forums .topic').each(function(index,elem){
+								if(arrayID.indexOf($(elem).data('parent')) != -1)
+									$(elem).show('fast');
+							});
 						}
 					});
-
 				});	
 			</script>
 

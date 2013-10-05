@@ -278,7 +278,7 @@ span.bbp-author-ip {
 {
 	display: inline-block;
 	line-height: 40px;
-	width : 80%;
+	width : 100%;
 	cursor: pointer;
 	padding : 0 10px;
 	-webkit-transition: all 0.2s ease-in;
@@ -295,22 +295,10 @@ span.bbp-author-ip {
 {
 	float: right;
 }
-
 .sidebar li .bbp-forum-title.forumsRoot
 {
 	width : 100%;
 }
-
-.sidebar li .voirTout { 
-	display: inline-block;
-	width : 10%;
-
-	position: absolute;
-	color: white;
-	top: 0px; 
-	right: 0px; 
-}
-
 .sidebar li.bbp-forum-info {
 	float : none;
 	width : inherit;
