@@ -14,14 +14,35 @@
 		<!-- section -->
 		<h1 class="entry-title"><?php bbp_forum_archive_title(); ?></h1>
 		<aside class="sidebar col_tier" role="complementary">
+			<ul id="bbp-forum-<?php bbp_forum_id(); ?>" class="forum" data-id="0">
+				<li class="bbp-forum-info">
+					<span class="bbp-forum-title forumsRoot">Voir tout les topics</span>
+				</li>
+			</ul><!-- #bbp-forum-<?php bbp_forum_id(); ?> -->
 			<?php if ( bbp_has_forums() ) : ?>
 				<?php while ( bbp_forums() ) : bbp_the_forum(); ?>
 
-					<ul id="bbp-forum-<?php bbp_forum_id(); ?>" <?php bbp_forum_class(); ?>>
+					<ul id="bbp-forum-<?php bbp_forum_id(); ?>" data-id="<?php bbp_forum_id(); ?>" <?php bbp_forum_class(); ?>>
 						<li class="bbp-forum-info">
-							<a class="bbp-forum-title" href="<?php bbp_forum_permalink(); ?>" title="<?php bbp_forum_title(); ?>"><?php bbp_forum_title(); ?></a>
-							<?php bbp_list_forums(); ?>
-							<span class="count-topic"><?php bbp_forum_topic_count(); ?></span>
+							<!-- <a class="bbp-forum-title" href="<?php bbp_forum_permalink(); ?>" title="<?php bbp_forum_title(); ?>"><?php bbp_forum_title(); ?></a> -->
+							<span class="bbp-forum-title">
+								<?php bbp_forum_title(); ?>
+								<span class="count-topic"><?php bbp_forum_topic_count(); ?></span>
+							</span>
+							<?php bbp_list_forums(array(
+								'before'            => '<ul class="bbp-forums-list">',
+								'after'             => '</ul>',
+								'link_before'       => '<li class="bbp-forum bbp-forum-title forum">',
+								'link_after'        => '</li>',
+								'count_before'      => '<span class="count-topic">',
+								'count_after'       => '</span>',
+								'count_sep'         => '',
+								'separator'         => '',
+								'show_topic_count'  => true,
+								'show_reply_count'  => false,
+							)); ?>
+							
+							<a class="voirTout" href="<?php bbp_forum_permalink(); ?>" title="<?php bbp_forum_title(); ?>">Voir tout</a>
 						</li>
 					</ul><!-- #bbp-forum-<?php bbp_forum_id(); ?> -->
 
@@ -45,7 +66,7 @@
 								<li class="bbp-body">
 									<?php if ( bbp_has_topics() ) : ?>
 									<?php while ( bbp_topics() ) : bbp_the_topic(); ?>
-										<ul id="bbp-topic-<?php bbp_topic_id(); ?>" data-parent="<?php bbp_forum_id(); ?>" <?php bbp_topic_class(); ?>>
+										<ul id="bbp-topic-<?php bbp_topic_id(); ?>" data-parent="<?php bbp_forum_parent_id(); ?>" <?php bbp_topic_class(); ?>>
 											<!-- Affiche l'icone de vue -->
 											<?php do_action( 'bbp_theme_before_topic_title' ); ?>
 											<?php do_action( 'bbp_theme_after_topic_meta' ); ?>
@@ -91,9 +112,21 @@
 			</div><!-- #forum-front -->
 
 			<script>
-				bbp-forum-65
-				bbp-parent-forum-65
+				$(function(){
+					$('.sidebar .forum .bbp-forum-title').click(function(){
+						var id = $(this).closest('.forum').data('id');
+						if(id == 0)
+						{
+							$('#bbpress-forums .topic').show('fast');
+						}
+						else
+						{
+							$('#bbpress-forums').find('.topic').hide('fast');
+							$('#bbpress-forums').find('.topic[data-parent="'+ id +'"]').show('fast');
+						}
+					});
 
+				});	
 			</script>
 
 		</section>

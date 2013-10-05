@@ -372,6 +372,7 @@ input:focus {
 {
   margin : 0;
 }
+#slider .slides { overflow : hidden; height : 404px; }
 #slider .slides li {
   position: relative;
 }

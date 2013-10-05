@@ -133,6 +133,7 @@ li.bbp-topic-title {
 	text-align: left;
 	width: 55%;
 }
+
 li.bbp-forum-topic-count,
 li.bbp-topic-voice-count,
 li.bbp-forum-reply-count,
@@ -262,6 +263,59 @@ span.bbp-author-ip {
 	font-size: 11px;
 	font-weight: bold;
 	color: #aaa;
+}
+
+/* Sidebar home */
+.sidebar ul {
+	margin : 5px;
+	padding: 0;
+	background : black;
+	list-style: none;
+
+	color : white;
+}
+.sidebar li .bbp-forum-title
+{
+	display: inline-block;
+	line-height: 40px;
+	width : 80%;
+	cursor: pointer;
+	padding : 0 10px;
+	-webkit-transition: all 0.2s ease-in;
+	-moz-transition: all 0.2s ease-in;
+	-ms-transition: all 0.2s ease-in;
+	-o-transition: all 0.2s ease-in;
+	transition: all 0.2s ease-in;
+}
+.sidebar li .bbp-forum-title:hover
+{
+	background : #ef4d3a;
+}
+.sidebar li .bbp-forum-title .count-topic
+{
+	float: right;
+}
+
+.sidebar li .bbp-forum-title.forumsRoot
+{
+	width : 100%;
+}
+
+.sidebar li .voirTout { 
+	display: inline-block;
+	width : 10%;
+
+	position: absolute;
+	color: white;
+	top: 0px; 
+	right: 0px; 
+}
+
+.sidebar li.bbp-forum-info {
+	float : none;
+	width : inherit;
+
+	position: relative;
 }
 
 /* =Topic and reply content
