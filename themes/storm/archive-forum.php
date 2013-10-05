@@ -14,7 +14,7 @@
 		<!-- section -->
 		<h1 class="entry-title"><?php bbp_forum_archive_title(); ?></h1>
 		<aside class="sidebar col_tier" role="complementary">
-			<ul id="bbp-forum-<?php bbp_forum_id(); ?>" class="forum" data-id="0">
+			<ul id="bbp-forum-<?php bbp_forum_id(); ?>" class="forum active" data-id="0">
 				<li class="bbp-forum-info">
 					<span class="bbp-forum-title forumsRoot">Voir tout les topics</span>
 				</li>
@@ -34,8 +34,8 @@
 							if ( !empty( $sub_forums ) ) {
 								echo '<ul class="bbp-forums-list forum-enfant">';
 								foreach ( $sub_forums as $sub_forum ) { ?>
-									<li class="bbp-forum bbp-forum-title forum" data-id="<?php echo $sub_forum->ID; ?>">
-										<span class="bbp-forum-link">
+									<li class="bbp-forum forum" data-id="<?php echo $sub_forum->ID; ?>">
+										<span class="bbp-forum-title">
 											<?php echo bbp_get_forum_title( $sub_forum->ID ); ?>
 											<span class="count-topic"><?php echo bbp_get_forum_topic_count( $sub_forum->ID ); ?></span>
 										</span>
@@ -69,11 +69,11 @@
 									<?php if ( bbp_has_topics() ) : ?>
 									<?php while ( bbp_topics() ) : bbp_the_topic(); ?>
 										<ul id="bbp-topic-<?php bbp_topic_id(); ?>" data-parent="<?php bbp_forum_parent_id(); ?>" <?php bbp_topic_class(); ?>>
-											<!-- Affiche l'icone de vue -->
-											<?php do_action( 'bbp_theme_before_topic_title' ); ?>
-											<?php do_action( 'bbp_theme_after_topic_meta' ); ?>
-											<!-- FIN affiche l'icone de vue -->
 											<li class="bbp-topic-title">
+												<!-- Affiche l'icone de vue -->
+												<?php do_action( 'bbp_theme_before_topic_title' ); ?>
+												<?php do_action( 'bbp_theme_after_topic_meta' ); ?>
+												<!-- FIN affiche l'icone de vue -->
 												<?php if ( bbp_is_user_home() ) : ?>
 													<?php if ( bbp_is_favorites() ) : ?>
 														<span class="bbp-topic-action">
@@ -134,6 +134,8 @@
 									$(elem).show('fast');
 							});
 						}
+						$('.sidebar .forum.active').removeClass('active');
+						forum.addClass('active');
 					});
 				});	
 			</script>

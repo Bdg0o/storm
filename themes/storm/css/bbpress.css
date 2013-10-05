@@ -269,10 +269,23 @@ span.bbp-author-ip {
 .sidebar ul {
 	margin : 5px;
 	padding: 0;
-	background : black;
+	background : #E9E9E9;
 	list-style: none;
 
-	color : white;
+	color : #444;
+}
+.sidebar li .forum-enfant
+{
+	margin : 0 0 0 7px;
+}
+.sidebar li .forum-enfant .bbp-forum-title
+{
+	border: none;
+}
+
+.sidebar li .forum-enfant .bbp-forum-title
+{
+	border-bottom: 1px solid #E9E9E9;
 }
 .sidebar li .bbp-forum-title
 {
@@ -281,16 +294,28 @@ span.bbp-author-ip {
 	width : 100%;
 	cursor: pointer;
 	padding : 0 10px;
+
+	background : #F1F1F1;
+	border : none;
+	border: 1px solid #E9E9E9;
+	
 	-webkit-transition: all 0.2s ease-in;
 	-moz-transition: all 0.2s ease-in;
 	-ms-transition: all 0.2s ease-in;
 	-o-transition: all 0.2s ease-in;
 	transition: all 0.2s ease-in;
 }
-.sidebar li .bbp-forum-title:hover
-{
-	background : #ef4d3a;
+.sidebar .forum {
+	-webkit-transition: all 0.2s ease-in;
+	-moz-transition: all 0.2s ease-in;
+	-ms-transition: all 0.2s ease-in;
+	-o-transition: all 0.2s ease-in;
+	transition: all 0.2s ease-in;
 }
+.sidebar .forum.active {
+	border-left: 5px solid #EF4D3A;
+}
+
 .sidebar li .bbp-forum-title .count-topic
 {
 	float: right;
