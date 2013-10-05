@@ -32,7 +32,7 @@
 
 			<div id="forum-front" class="bbp-forum-front">
 				<div class="entry-content">
-					<div id="bbpress-forums">
+					<div id="bbpress-forums"> 
 							<ul id="bbp-forum-<?php bbp_forum_id(); ?>" class="bbp-topics">
 								<li class="bbp-header">
 									<ul class="forum-titles">
@@ -45,7 +45,7 @@
 								<li class="bbp-body">
 									<?php if ( bbp_has_topics() ) : ?>
 									<?php while ( bbp_topics() ) : bbp_the_topic(); ?>
-										<ul id="bbp-topic-<?php bbp_topic_id(); ?>" <?php bbp_topic_class(); ?>>
+										<ul id="bbp-topic-<?php bbp_topic_id(); ?>" data-parent="<?php bbp_forum_id(); ?>" <?php bbp_topic_class(); ?>>
 											<!-- Affiche l'icone de vue -->
 											<?php do_action( 'bbp_theme_before_topic_title' ); ?>
 											<?php do_action( 'bbp_theme_after_topic_meta' ); ?>
@@ -89,6 +89,12 @@
 					</div>
 				</div>
 			</div><!-- #forum-front -->
+
+			<script>
+				bbp-forum-65
+				bbp-parent-forum-65
+
+			</script>
 
 		</section>
 		<!-- /section -->
