@@ -1,7 +1,7 @@
 {
   "storm/404.php": {
-    "size": 459,
-    "date": "2013-09-27T20:32:09.651Z"
+    "size": 1802,
+    "date": "2013-10-06T12:54:53.327Z"
   },
   "storm/archive.php": {
     "size": 388,
@@ -76,8 +76,8 @@
     "date": "2013-09-29T09:09:01.050Z"
   },
   "storm/functions.php": {
-    "size": 19705,
-    "date": "2013-10-05T08:27:16.023Z"
+    "size": 22193,
+    "date": "2013-10-06T12:53:10.380Z"
   },
   "storm/header.php": {
     "size": 3268,
@@ -308,8 +308,8 @@
     "date": "2013-09-28T17:54:13.030Z"
   },
   "storm/style.css": {
-    "size": 22510,
-    "date": "2013-10-05T09:01:57.809Z"
+    "size": 22792,
+    "date": "2013-10-06T12:59:46.763Z"
   },
   "storm/tag.php": {
     "size": 328,
@@ -1046,5 +1046,9 @@
   "storm/bbpress/form-reply.php": {
     "size": 6393,
     "date": "2013-10-05T18:21:29.768Z"
+  },
+  "storm/img/tornade.jpg": {
+    "size": 219558,
+    "date": "2013-10-06T12:53:12.639Z"
   }
 }

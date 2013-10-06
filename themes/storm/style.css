@@ -974,7 +974,20 @@ li.bbp-footer {
     404
 \*------------------------------------*/
 
-
+.error404 .wrapper
+{
+  background : url(img/tornade.jpg) no-repeat;
+  -webkit-background-size:cover;
+  -moz-background-size:cover;
+  background-size:cover;
+  height : 890px;
+}
+.error404 h1
+{
+  color: #FFF;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 0px 6px 0px 6px;
+}
 
 /*------------------------------------*\
     CSS SPECIAL FIREFOX
