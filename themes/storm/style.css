@@ -685,6 +685,11 @@ input:focus {
   border: 3px solid #fff; 
   box-shadow: 1px 1px 4px #c0c0c0; }
   
+blockquote {
+	background: #fff;
+	padding: 5px;
+	box-shadow: 1px 1px 4px #c0c0c0;
+}
 
 .single p {
   color: #333;
@@ -701,10 +706,14 @@ input:focus {
   clear: both; }
   
 .single #bbpress-forums .bbp-form {
-  padding: 0 15px; }
+  padding: 0; }
 
 .single .comments {
   display: none; }
+  
+.single .comment-respond {
+  margin-top: 30px;
+}
   
 .single .post .post-edit-link {
   float: right; }
@@ -714,6 +723,15 @@ input:focus {
   border-radius: 0; 
   font-weight: 400; }
   
+#bbpress-forums fieldset.bbp-form legend {
+	padding:  0 0 5px 0;
+	font-size: 1.2em;
+}
+  
+.bbp-topic-wrapper h1 {
+	margin: 15px 0;
+	color: #ef4d3a;
+}
 
 /*------------------------------------*\
     IMAGES
@@ -913,13 +931,40 @@ li.bbp-footer {
   color: #222;
   font-size: 1.1em; }
 
-.single .post #bbpress-forums .bbp-reply-header {
+#bbpress-forums .bbp-reply-header {
   border-top: none;
-  background-color: #fafafa; }
+  background-color: #fff !important;
+  padding-bottom: 0; }
+ 
+#bbpress-forums .reply {
+	background: #fff !important;
+	border-bottom: 1px solid #ddd;
+}
+
+#bbpress-forums .odd {
+	background: #fff !important;
+}
+  
+.bbp-body div.hentry {
+	padding: 2px 8px;
+	border-bottom: 1px solid #ddd;
+}
+  
+.single span.bbp-admin-links a {
+	color: #777;
+}
+
+.single span.bbp-admin-links a:hover {
+	color: #ef4d3a;
+}
   
 #bbpress-forums li.bbp-header {
   background-color: #f1f1f1; 
   border-top: none; }
+  
+#bbpress-forums div.bbp-reply-author .avatar {
+	box-shadow: none;
+}
 
 #bbpress-forums div.bbp-reply-author .avatar:hover {
   border: 1px solid #ef4d3a; }
@@ -962,6 +1007,19 @@ li.bbp-footer {
 	border: none;
 }
 
+#bbpress-forums fieldset.bbp-form {
+	border: none;
+}
+
+#bbpress-forums div.bbp-the-content-wrapper textarea.bbp-the-content {
+	height: 160px;
+}
+
+
+#bbpress-forums div.bbp-reply-author {
+	border-right: 1px solid #eee;
+}
+
 /*------------------------------------*\
     ARCHIVE PAGE
 \*------------------------------------*/
@@ -987,6 +1045,63 @@ li.bbp-footer {
   color: #FFF;
   background: rgba(0, 0, 0, 0.7);
   padding: 0px 6px 0px 6px;
+}
+
+/*------------------------------------*\
+    CSS SPECIAL FIREFOX
+\*------------------------------------*/
+
+.membre-infos {
+	float: left;
+	width: 320px;
+	height: 98px;
+	margin-bottom: 36px;
+}
+
+.membre-infos .image-membre {
+	float: left;
+	background: #333;
+	width: 98px;
+	height: 98px;
+	border: 3px solid #fff;
+	box-shadow: 1px 1px 4px #c0c0c0;
+	margin-right: 12px;
+}
+
+
+.membre-infos .infos {
+	float: left;
+	width: 194px;
+	margin-right: 16px;
+}
+
+.membre-infos .infos .name,
+.membre-infos .infos .game,
+.membre-infos .infos .age,
+.membre-infos .infos .nationalite {
+	float: left;
+	clear: both;
+	margin-bottom: 3px;
+}
+
+.membre-infos .infos .name {
+	margin-bottom: 8px;
+}
+
+.membre-infos .infos .name .ligne-membre {
+	width: 140px;
+	height: 1px;
+	background: #bababa;
+}
+
+.membre-infos .infos .membre-name {
+	color: #ef4d3a;
+	font-size: 1.2em;
+	font-weight: 600;
+}
+
+.membre-infos .infos .color-membre {
+	color: #ef4d3a;
 }
 
 /*------------------------------------*\
