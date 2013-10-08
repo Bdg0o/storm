@@ -694,11 +694,13 @@ blockquote {
 	background: #fff;
 	padding: 5px;
 	box-shadow: 1px 1px 4px #c0c0c0;
+	font-style: italic;
 }
 
 .single p {
   color: #333;
-  margin-top: 0px; }
+  margin-top: 0px;
+  line-height: 1.5em; }
 
 .single #reactions {
   padding: 3px 0px 3px 9px;
