@@ -42,6 +42,10 @@
 				
 				<?php edit_post_link(); // Always handy to have Edit Post Links available ?>
 				
+				<!-- une ligne -->
+				<div class="ligne"></div>
+				<!-- /une ligne -->
+				
 				<?php comments_template(); ?>
 				
 			</article>
