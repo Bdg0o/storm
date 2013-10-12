@@ -118,7 +118,7 @@
 							<?php // bbp_dropdown( array( 'selected' => bbp_get_form_topic_forum() ) ); ?>
 							
 						</p> -->
-						<input type="hidden" id="bbp_forum_id">
+						<input type="hidden" id="bbp_forum_id" name="bbp_forum_id" />
 
 						<?php do_action( 'bbp_theme_after_topic_form_forum' ); ?>
 

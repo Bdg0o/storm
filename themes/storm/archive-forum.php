@@ -21,32 +21,33 @@
 			</ul><!-- #bbp-forum-<?php bbp_forum_id(); ?> -->
 			<?php if ( bbp_has_forums() ) : ?>
 				<?php while ( bbp_forums() ) : bbp_the_forum(); ?>
-
-					<ul id="bbp-forum-<?php bbp_forum_id(); ?>" data-id="<?php bbp_forum_id(); ?>" <?php bbp_forum_class(); ?>>
-						<li class="bbp-forum-info">
-							<!-- <a class="bbp-forum-title" href="<?php bbp_forum_permalink(); ?>" title="<?php bbp_forum_title(); ?>"><?php bbp_forum_title(); ?></a> -->
-							<span class="bbp-forum-title">
-								<?php bbp_forum_title(); ?>
-								<span class="count-topic"><?php bbp_forum_topic_count(); ?></span>
-							</span>
-							<?php
-							$sub_forums = bbp_forum_get_subforums(  bbp_get_forum_id() );
-							if ( !empty( $sub_forums ) ) {
-								echo '<ul class="bbp-forums-list forum-enfant">';
-								foreach ( $sub_forums as $sub_forum ) { ?>
-									<li class="bbp-forum forum" data-id="<?php echo $sub_forum->ID; ?>">
-										<span class="bbp-forum-title">
-											<?php echo bbp_get_forum_title( $sub_forum->ID ); ?>
-											<span class="count-topic"><?php echo bbp_get_forum_topic_count( $sub_forum->ID ); ?></span>
-										</span>
-									</li>
+					<?php if ( bbp_user_can_view_forum() ) : ?>
+						<ul id="bbp-forum-<?php bbp_forum_id(); ?>" data-id="<?php bbp_forum_id(); ?>" <?php bbp_forum_class(); ?>>
+							<li class="bbp-forum-info">
+								<!-- <a class="bbp-forum-title" href="<?php bbp_forum_permalink(); ?>" title="<?php bbp_forum_title(); ?>"><?php bbp_forum_title(); ?></a> -->
+								<span class="bbp-forum-title">
+									<?php bbp_forum_title(); ?>
+									<span class="count-topic"><?php bbp_forum_topic_count(); ?></span>
+								</span>
 								<?php
+								$sub_forums = bbp_forum_get_subforums(  bbp_get_forum_id() );
+								if ( !empty( $sub_forums ) ) {
+									echo '<ul class="bbp-forums-list forum-enfant">';
+									foreach ( $sub_forums as $sub_forum ) { ?>
+										<li class="bbp-forum forum" data-id="<?php echo $sub_forum->ID; ?>">
+											<span class="bbp-forum-title">
+												<?php echo bbp_get_forum_title( $sub_forum->ID ); ?>
+												<span class="count-topic"><?php echo bbp_get_forum_topic_count( $sub_forum->ID ); ?></span>
+											</span>
+										</li>
+									<?php
+									}
+									echo '</ul>';
 								}
-								echo '</ul>';
-							}
-							?>
-						</li>
-					</ul><!-- #bbp-forum-<?php bbp_forum_id(); ?> -->
+								?>
+							</li>
+						</ul><!-- #bbp-forum-<?php bbp_forum_id(); ?> -->
+					<?php endif; ?>
 
 				<?php endwhile; ?>
 			<?php endif; ?>
