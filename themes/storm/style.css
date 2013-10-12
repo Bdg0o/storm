@@ -1,18 +1,10 @@
-/*
-	Theme Name: Storm
-	Description: Storm communotée
-	Version: 1.0
-	Author: Biffi et Bdg
+﻿/*   
+Theme Name: Storm
+Description: Storm communautée
+Author: Biffi et Bdg
+Version: 1
 */
 
-/*
-	Theme Name: Storm
-	Description: Storm communotée
-	Version: 1.0
-	Author: Biffi et Bdg
-*/
-
-/*Commande scss : sass --watch global.scss:css/global.css*/
 /*------------------------------------*\
     MAIN
 \*------------------------------------*/
@@ -28,7 +20,7 @@
   -webkit-font-smoothing: antialiased;
   font-smoothing: antialiased;
   text-rendering: optimizeLegibility; }
-
+ 
 /* html element 62.5% font-size for REM use */
 html {
   font-size: 62.5%; }
@@ -37,7 +29,8 @@ body {
   font: 300 11px/1.4 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #444;
   background: url("img/bg.jpg");
-  font-size: 14px; }
+  font-size: 14px; 
+}
 
 /* clear */
 .clear:before,

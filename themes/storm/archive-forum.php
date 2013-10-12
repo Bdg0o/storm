@@ -55,7 +55,7 @@
 
 			<div id="forum-front" class="bbp-forum-front">
 				<div class="entry-content">
-					<div id="bbpress-forums"> 
+					<div id="bbpress-forums" data-forum="0"> 
 							<ul id="bbp-forum-<?php bbp_forum_id(); ?>" class="bbp-topics">
 								<li class="bbp-header">
 									<ul class="forum-titles">
@@ -109,6 +109,13 @@
 									</div><!-- .tr -->
 								</li>
 							</ul><!-- #bbp-forum-<?php bbp_forum_id(); ?> -->
+
+							<?php if ( bbp_current_user_can_publish_topics() ) : ?>
+								<a href="#newtopic-popup" class="btn-newtopic open-popup-link" data-effect="mfp-zoom-out">Ajouter un sujet</a>
+								<div id="newtopic-popup" class="white-popup mfp-hide mfp-with-anim">
+									<?php bbp_get_template_part( 'form', 'topic' ); ?>
+								</div>
+							<?php endif; ?>
 					</div>
 				</div>
 			</div><!-- #forum-front -->
@@ -124,10 +131,13 @@
 
 						if(forum.data('id') == 0)
 						{
+							$('#bbpress-forums .btn-newtopic').hide('fast');
 							$('#bbpress-forums .topic').show('fast');
 						}
 						else
 						{
+							$('#bbpress-forums .btn-newtopic').show('fast');
+							$('#newtopic-popup #bbp_forum_id').val(forum.data('id')); 
 							$('#bbpress-forums').find('.topic').hide('fast');
 							$('#bbpress-forums .topic').each(function(index,elem){
 								if(arrayID.indexOf($(elem).data('parent')) != -1)

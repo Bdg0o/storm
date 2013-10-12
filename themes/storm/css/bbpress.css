@@ -331,6 +331,10 @@ span.bbp-author-ip {
 	position: relative;
 }
 
+#bbpress-forums .btn-newtopic {
+	display : none;
+}
+
 /* =Topic and reply content
 -------------------------------------------------------------- */
 

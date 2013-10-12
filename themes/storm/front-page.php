@@ -1,6 +1,7 @@
 <?php get_header(); ?>
 	
 	<!-- Affiche le slider -->
+    
 	<div id="slider-wrapper">
 		<div id="slider">
 			<ul class="slides">
