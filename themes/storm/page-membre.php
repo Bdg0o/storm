@@ -144,6 +144,7 @@ Template Name: Page membre
 	</div>
 </div>
 
+<div id="construct" style="color: red">/!\ En construction /!\</div>
 
 <br class="clear">
 

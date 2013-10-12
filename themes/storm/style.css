@@ -79,13 +79,17 @@ input:focus {
 /*------------------------------------*\
     NIVEAUX DE TITRE
 \*------------------------------------*/
-.main h1, .sidebar h3, #connexion-popup .title h1, #inscription-popup .title h1 {
+.main h1, .sidebar h3, #connexion-popup .title h1, #inscription-popup .title h1, .page-template-page-membre-php h1 {
   color: #f2473f;
   font-size: 1.2em;
   text-transform: uppercase;
   border-bottom: 1px solid #bababa;
   margin: 0 0 15px 0; 
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.page-template-page-membre-php h1 { 
+	margin-top: 20px;
 }
 
 .footer h5 {
