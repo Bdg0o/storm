@@ -11,6 +11,8 @@
 				<!-- post thumbnail -->
 				<?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
 						<?php the_post_thumbnail('image-post'); // Fullsize image for the single post ?>
+				<?php else : ?>
+					<img class="wp-post-image" src="<?php echo get_template_directory_uri(); ?>/img/no-img.png" alt="">
 				<?php endif; ?>
 				<!-- /post thumbnail -->
 				

@@ -112,7 +112,7 @@
 							</ul><!-- #bbp-forum-<?php bbp_forum_id(); ?> -->
 
 							<?php if ( bbp_current_user_can_publish_topics() ) : ?>
-								<a href="#newtopic-popup" class="btn-newtopic open-popup-link" data-effect="mfp-zoom-out">Ajouter un sujet</a>
+								<a href="#newtopic-popup" class="btn-newtopic open-popup-link" data-effect="mfp-zoom-out">Nouveau sujet</a>
 								<div id="newtopic-popup" class="white-popup mfp-hide mfp-with-anim">
 									<?php bbp_get_template_part( 'form', 'topic' ); ?>
 								</div>

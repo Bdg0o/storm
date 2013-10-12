@@ -10,7 +10,7 @@
 				query_posts($argslider);
 				while ( have_posts() ) : the_post();
 					$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'slider-thumb' );
-				    echo '<li data-thumb="'. $thumb[0] .'">';
+				    echo '<li data-thumb="'. $thumb[0] .'"><a href="'. get_post_meta( $post->ID, 'url', true ) .'">';
 				    the_post_thumbnail('slider-image');
 				    ?>
 				    <div class="row">
@@ -25,7 +25,7 @@
 					    </div>
 				    </div>
 				    <?php
-				    echo '</li>';
+				    echo '</a></li>';
 				endwhile;
 				wp_reset_query();
 				?>

@@ -8,6 +8,10 @@
 			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 				<?php the_post_thumbnail('loop-thumb'); // Declare pixel size you need inside the array ?>
 			</a>
+		<?php else : ?>
+			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+				<img class="wp-post-image" src="<?php echo get_template_directory_uri(); ?>/img/no-img-petit.png" alt="">
+			</a>
 		<?php endif; ?>
 		<!-- /post thumbnail -->
 		<div class="content clear">
