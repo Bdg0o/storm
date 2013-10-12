@@ -10,9 +10,7 @@
 			
 				<!-- post thumbnail -->
 				<?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
-					<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 						<?php the_post_thumbnail('image-post'); // Fullsize image for the single post ?>
-					</a>
 				<?php endif; ?>
 				<!-- /post thumbnail -->
 				
@@ -23,10 +21,16 @@
 				<!-- /post title -->
 				
 				<!-- post details -->
-				<span class="date">Le <?php the_time('d/m/Y'); ?>, </span>
-				<span class="author">par <?php the_author_posts_link(); ?></span>
-				<span class="comments"><?php comments_popup_link( __( 'Leave your thoughts', 'html5blank' ), __( '1 Comment', 'html5blank' ), __( '% Comments', 'html5blank' )); ?></span>
+				<div class="bg-date-author">
+					<span class="date">Le <?php the_time('d/m/Y'); ?>, </span>
+					<span class="author">par <?php the_author_posts_link(); ?></span>
+					<span class="comments"><?php comments_popup_link( __( 'Leave your thoughts', 'html5blank' ), __( '1 Comment', 'html5blank' ), __( '% Comments', 'html5blank' )); ?></span>
+				</div>
 				<!-- /post details -->
+				
+				<!-- une ligne -->
+				<div class="ligne"></div>
+				<!-- /une ligne -->
 				
 				<?php the_content(); // Dynamic Content ?>
 				
@@ -37,6 +41,10 @@
 				<!-- <p><?php _e( 'This post was written by ', 'html5blank' ); the_author(); ?></p> -->
 				
 				<?php edit_post_link(); // Always handy to have Edit Post Links available ?>
+				
+				<!-- une ligne -->
+				<div class="ligne"></div>
+				<!-- /une ligne -->
 				
 				<?php comments_template(); ?>
 				
