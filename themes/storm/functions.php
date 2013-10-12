@@ -31,6 +31,8 @@ if (function_exists('add_theme_support'))
     add_image_size('loop-thumb', 235, 135, true);
     add_image_size('image-post', 640, 250, true);
 
+    add_image_size('avatar-image', 98, 98, true);
+
     // Add Support for Custom Header - Uncomment below if you're going to use
     /*add_theme_support('custom-header', array(
 	'default-image'			=> get_template_directory_uri() . '/img/headers/default.jpg',
@@ -466,6 +468,8 @@ function modify_capabilities() {
 add_action('init','modify_capabilities');
 
 
+
+
 /************** AJOUTE POUR STORM *****************/
 
 function the_breadcrumbs() {
@@ -553,7 +557,6 @@ function the_breadcrumbs() {
     }
 
 
-
 /* Ajout de Maxime */
 
 	// Custom du preview des articles
@@ -561,5 +564,31 @@ function the_breadcrumbs() {
 	return 32;
 	}
 	add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
+
+/* Loop membre */
+
+function loopMembre($user, $role)
+{
+    return '<div class="membre-infos">
+             '. get_avatar( $user->ID, 'avatar-image') .'
+        <div class="infos">
+            <div class="name">
+                <span class="membre-name">'. $user->display_name .'</span>
+                <span class="membre-rank"> ('. $role .')</span>
+                <div class="ligne-membre"></div>
+            </div>
+            <div class="game">
+                Joue à : <span class="color-membre">'. $user->display_name .'</span>
+            </div>
+            <div class="age">
+                Age : <span class="color-membre">'. $user->display_name .'</span>
+            </div>
+            <div class="nationalite">
+                Nationalité : <span class="color-membre">'. $user->display_name .'</span>
+            </div>
+        </div>
+    </div>';
+}
 
 ?>

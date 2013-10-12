@@ -17,132 +17,73 @@ Template Name: Page membre
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 <!-- Ton html pour les membres -->
+<!-- 
+[ID] => 1
+[user_login] => admin
+[user_pass] => $P$Bxudi6gJMk2GRt2ed3xvZ06c1BPZXi/
+[user_nicename] => admin
+[user_email] => admin@host.com
+[user_url] => http://localhost/
+[user_registered] => 2010-06-29 07:08:55
+[user_activation_key] => 
+[user_status] => 0
+[display_name] => Richard Branson -->
 
-<div class="membre-infos">
-	<div class="image-membre">
-	</div>
-	<div class="infos">
-		<div class="name">
-			<span class="membre-name">Biffi</span>
-			<span class="membre-rank"> (admin)</span>
-			<div class="ligne-membre"></div>
-		</div>
-		<div class="game">
-			Joue à : <span class="color-membre">Smite</span>
-		</div>
-		<div class="age">
-			Age : <span class="color-membre">23 ans</span>
-		</div>
-		<div class="nationalite">
-			Nationalité : <span class="color-membre">Belge</span>
-		</div>
-	</div>
-</div>
+<ul>
+<?php
+// The Query
+$user_query = new WP_User_Query( array( 'role' => 'Administrator' ) );
 
-<div class="membre-infos">
-	<div class="image-membre">
-	</div>
-	<div class="infos">
-		<div class="name">
-			<span class="membre-name">Bdg</span>
-			<span class="membre-rank"> (admin)</span>
-			<div class="ligne-membre"></div>
-		</div>
-		<div class="game">
-			Joue à : <span class="color-membre">League of Legends</span>
-		</div>
-		<div class="age">
-			Age : <span class="color-membre">22 ans</span>
-		</div>
-		<div class="nationalite">
-			Nationalité : <span class="color-membre">Français</span>
-		</div>
-	</div>
-</div>
+// User Loop
+if ( ! empty( $user_query->results ) ) {
+	foreach ( $user_query->results as $user ) {
+		echo loopMembre($user, 'Administrateur');
+	}
+}
 
-<div class="membre-infos">
-	<div class="image-membre">
-	</div>
-	<div class="infos">
-		<div class="name">
-			<span class="membre-name">Thuzak</span>
-			<span class="membre-rank"> </span>
-			<div class="ligne-membre"></div>
-		</div>
-		<div class="game">
-			Joue à : <span class="color-membre">Dragon's prophet</span>
-		</div>
-		<div class="age">
-			Age : <span class="color-membre">24 ans</span>
-		</div>
-		<div class="nationalite">
-			Nationalité : <span class="color-membre">Français</span>
-		</div>
-	</div>
-</div>
+// The Query
+$user_query = new WP_User_Query( array( 'role' => 'Editor' ) );
 
-<div class="membre-infos">
-	<div class="image-membre">
-	</div>
-	<div class="infos">
-		<div class="name">
-			<span class="membre-name">Jay</span>
-			<span class="membre-rank"></span>
-			<div class="ligne-membre"></div>
-		</div>
-		<div class="game">
-			Joue à : <span class="color-membre">World of tank</span>
-		</div>
-		<div class="age">
-			Age : <span class="color-membre">20 ans</span>
-		</div>
-		<div class="nationalite">
-			Nationalité : <span class="color-membre">Français</span>
-		</div>
-	</div>
-</div>
+// User Loop
+if ( ! empty( $user_query->results ) ) {
+	foreach ( $user_query->results as $user ) {
+		echo loopMembre($user, 'Editeur');
+	}
+}
 
-<div class="membre-infos">
-	<div class="image-membre">
-	</div>
-	<div class="infos">
-		<div class="name">
-			<span class="membre-name">MaisOuais</span>
-			<span class="membre-rank"></span>
-			<div class="ligne-membre"></div>
-		</div>
-		<div class="game">
-			Joue à : <span class="color-membre">Guild Wars 2</span>
-		</div>
-		<div class="age">
-			Age : <span class="color-membre">23 ans</span>
-		</div>
-		<div class="nationalite">
-			Nationalité : <span class="color-membre">Français</span>
-		</div>
-	</div>
-</div>
+// The Query
+$user_query = new WP_User_Query( array( 'role' => 'Author' ) );
 
-<div class="membre-infos">
-	<div class="image-membre">
-	</div>
-	<div class="infos">
-		<div class="name">
-			<span class="membre-name">Wiid</span>
-			<span class="membre-rank"></span>
-			<div class="ligne-membre"></div>
-		</div>
-		<div class="game">
-			Joue à : <span class="color-membre">Pay Day 2</span>
-		</div>
-		<div class="age">
-			Age : <span class="color-membre">25 ans</span>
-		</div>
-		<div class="nationalite">
-			Nationalité : <span class="color-membre">Français</span>
-		</div>
-	</div>
-</div>
+// User Loop
+if ( ! empty( $user_query->results ) ) {
+	foreach ( $user_query->results as $user ) {
+		echo loopMembre($user, 'Auteur');
+	}
+}
+
+// The Query
+$user_query = new WP_User_Query( array( 'role' => 'membre' ) );
+
+// User Loop
+if ( ! empty( $user_query->results ) ) {
+	foreach ( $user_query->results as $user ) {
+		echo loopMembre($user, 'Membre');
+	}
+}
+
+ //    $blogusers = get_users('orderby=nicename&role=Administrator');
+	// get_template_part('loop-membre');
+
+	// $blogusers = get_users('orderby=nicename&role=Editor');
+	// get_template_part('loop-membre');
+
+	// $blogusers = get_users('orderby=nicename&role=Author');
+	// get_template_part('loop-membre');
+
+	// $blogusers = get_users('orderby=nicename&role=membre');
+	// get_template_part('loop-membre');
+?>
+</ul>
 
 <div id="construct" style="color: red">/!\ En construction /!\</div>
 
