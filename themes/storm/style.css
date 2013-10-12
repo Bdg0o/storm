@@ -67,6 +67,10 @@ a:focus {
 a:hover,
 a:active {
   outline: 0; }
+  
+p a {
+	color: #ef4d3a;
+}
 
 input:focus {
   outline: 0;
@@ -1016,6 +1020,11 @@ li.bbp-footer {
 	padding: 10px;
 }
 
+.btn-newtopic {
+	display: block;
+	float: right;
+}
+
 #bbp_reply_submit:hover, #bbp_topic_submit:hover, .btn-newtopic:hover {
 	background: #333;
 	color: #fff;
@@ -1087,25 +1096,14 @@ li.bbp-footer {
 	height: 400px !important;
 }
 
-.bbpres .col_2tiers {
+.bbpress .col_2tiers {
 	width: 670px;
 	float: left;
 }
 
-.bbpres .col_tier {
+.bbpress .col_tier {
 	width: 290px;
 	float: left;
-}
-
-bbp-forum-info, .bbp-topic-title {
-	width: 54%;
-}
-
-.bbp-forum-topic-count, 
-.bbp-topic-voice-count, 
-.bbp-forum-reply-count, 
-.bbp-topic-reply-count {
-	width: 12%;
 }
 
 /*------------------------------------*\

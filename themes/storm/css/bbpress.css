@@ -131,7 +131,7 @@ li.bbp-forum-info,
 li.bbp-topic-title {
 	float: left;
 	text-align: left;
-	width: 55%;
+	width: 54%;
 }
 
 li.bbp-forum-topic-count,
@@ -140,7 +140,7 @@ li.bbp-forum-reply-count,
 li.bbp-topic-reply-count {
 	float: left;
 	text-align: center;
-	width: 10%;
+	width: 12%;
 }
 
 li.bbp-forum-freshness,
