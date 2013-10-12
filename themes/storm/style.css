@@ -369,7 +369,7 @@ input:focus {
 {
   margin : 0;
 }
-#slider .slides { overflow : hidden; height : 404px; }
+#slider .slides { overflow : hidden; max-height : 404px; }
 #slider .slides li {
   position: relative;
 }
@@ -999,7 +999,7 @@ li.bbp-footer {
   margin-top: 4px;
   color: #222; }
   
-#bbp_reply_submit, #bbp_topic_submit {
+#bbp_reply_submit, #bbp_topic_submit, .btn-newtopic {
 	display: block;
 	background: #ef4d3a;
 	color: #fff;
@@ -1016,7 +1016,7 @@ li.bbp-footer {
 	padding: 10px;
 }
 
-#bbp_reply_submit:hover, #bbp_topic_submit:hover {
+#bbp_reply_submit:hover, #bbp_topic_submit:hover, .btn-newtopic:hover {
 	background: #333;
 	color: #fff;
 	border: none;
@@ -1085,6 +1085,27 @@ li.bbp-footer {
 
 .topic-edit .wp-editor-area {
 	height: 400px !important;
+}
+
+.bbpres .col_2tiers {
+	width: 670px;
+	float: left;
+}
+
+.bbpres .col_tier {
+	width: 290px;
+	float: left;
+}
+
+bbp-forum-info, .bbp-topic-title {
+	width: 54%;
+}
+
+.bbp-forum-topic-count, 
+.bbp-topic-voice-count, 
+.bbp-forum-reply-count, 
+.bbp-topic-reply-count {
+	width: 12%;
 }
 
 /*------------------------------------*\
