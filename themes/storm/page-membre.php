@@ -37,7 +37,7 @@ $user_query = new WP_User_Query( array( 'role' => 'Administrator' ) );
 // User Loop
 if ( ! empty( $user_query->results ) ) {
 	foreach ( $user_query->results as $user ) {
-		echo loopMembre($user, 'Administrateur');
+		loopMembre($user, 'Administrateur');
 	}
 }
 
@@ -47,7 +47,7 @@ $user_query = new WP_User_Query( array( 'role' => 'Editor' ) );
 // User Loop
 if ( ! empty( $user_query->results ) ) {
 	foreach ( $user_query->results as $user ) {
-		echo loopMembre($user, 'Editeur');
+		loopMembre($user, 'Editeur');
 	}
 }
 
@@ -57,7 +57,7 @@ $user_query = new WP_User_Query( array( 'role' => 'Author' ) );
 // User Loop
 if ( ! empty( $user_query->results ) ) {
 	foreach ( $user_query->results as $user ) {
-		echo loopMembre($user, 'Auteur');
+		loopMembre($user, 'Auteur');
 	}
 }
 
@@ -67,7 +67,7 @@ $user_query = new WP_User_Query( array( 'role' => 'membre' ) );
 // User Loop
 if ( ! empty( $user_query->results ) ) {
 	foreach ( $user_query->results as $user ) {
-		echo loopMembre($user, 'Membre');
+		loopMembre($user, 'Membre');
 	}
 }
 
@@ -84,10 +84,6 @@ if ( ! empty( $user_query->results ) ) {
 	// get_template_part('loop-membre');
 ?>
 </ul>
-
-<div id="construct" style="color: red">/!\ En construction /!\</div>
-
-<br class="clear">
 
 <?php edit_post_link(); ?>
 

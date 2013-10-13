@@ -467,6 +467,69 @@ function modify_capabilities() {
 }
 add_action('init','modify_capabilities');
 
+/* Ajout des metas pour les utilisateurs */
+
+add_action( 'show_user_profile', 'my_show_extra_profile_fields' );
+add_action( 'edit_user_profile', 'my_show_extra_profile_fields' );
+
+function my_show_extra_profile_fields( $user ) { ?>
+
+    <h3>Informations complémentaires</h3>
+
+    <table class="form-table">
+
+        <tr>
+            <th><label for="twitter">Joue à</label></th>
+
+            <td>
+                <!-- <input type="text" name="joue" id="joue" value="<?php echo esc_attr( get_the_author_meta( 'joue', $user->ID ) ); ?>" class="regular-text" /><br /> -->
+            
+                <select name="joue" id="joue">
+                    <option value="">Rien actuellement</option>
+                    <?php $liste = get_categories( array( 'orderby' => 'name', 'child_of' => 18, 'hide_empty' => 0 )); 
+                    foreach($liste as $jeu)
+                    {
+                        echo '<option value="'. $jeu->term_id .'"';
+                        if(get_the_author_meta( 'joue', $user->ID ) == $jeu->term_id)
+                            echo ' selected="selected"';
+                        echo '>'. $jeu->name .'</option>';
+                    }
+                    ?> 
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th><label for="twitter">Age</label></th>
+
+            <td>
+                <input type="text" name="age" id="age" value="<?php echo esc_attr( get_the_author_meta( 'age', $user->ID ) ); ?>" class="regular-text" /><br />
+            </td>
+        </tr>
+        <tr>
+            <th><label for="twitter">Nationalité</label></th>
+
+            <td>
+                <input type="text" name="nationalite" id="nationalite" value="<?php echo esc_attr( get_the_author_meta( 'nationalite', $user->ID ) ); ?>" class="regular-text" /><br />
+            </td>
+        </tr>
+
+    </table>
+<?php }
+
+add_action( 'personal_options_update', 'my_save_extra_profile_fields' );
+add_action( 'edit_user_profile_update', 'my_save_extra_profile_fields' );
+
+function my_save_extra_profile_fields( $user_id ) {
+
+    if ( !current_user_can( 'edit_user', $user_id ) )
+        return false;
+
+    /* Copy and paste this line for additional fields. Make sure to change 'twitter' to the field ID. */
+    update_usermeta( $user_id, 'joue', $_POST['joue'] );
+    update_usermeta( $user_id, 'age', $_POST['age'] );
+    update_usermeta( $user_id, 'nationalite', $_POST['nationalite'] );
+}
+
 
 
 
@@ -525,38 +588,6 @@ function the_breadcrumbs() {
     elseif (is_search()) {echo"Search results: "; }
 }
 
-/* FORMULAIRE D'INSCRIPTION */
-
-    //1. Add a new form element...
-    add_action('register_form','storm_register_form');
-    function storm_register_form (){
-        $first_name = ( isset( $_POST['first_name'] ) ) ? $_POST['first_name']: '';
-        ?>
-        <p>
-            <label for="first_name"><?php _e('First Name','mydomain') ?><br />
-                <input type="text" name="first_name" id="first_name" class="input" value="<?php echo esc_attr(stripslashes($first_name)); ?>" size="25" /></label>
-        </p>
-        <?php
-    }
-
-    //2. Add validation. In this case, we make sure first_name is required.
-    add_filter('registration_errors', 'storm_registration_errors', 10, 3);
-    function storm_registration_errors ($errors, $sanitized_user_login, $user_email) {
-
-        if ( empty( $_POST['first_name'] ) )
-            $errors->add( 'first_name_error', __('<strong>ERROR</strong>: You must include a first name.','mydomain') );
-
-        return $errors;
-    }
-
-    //3. Finally, save our extra registration user meta.
-    add_action('user_register', 'storm_user_register');
-    function storm_user_register ($user_id) {
-        if ( isset( $_POST['first_name'] ) )
-            update_user_meta($user_id, 'first_name', $_POST['first_name']);
-    }
-
-
 /* Ajout de Maxime */
 
 	// Custom du preview des articles
@@ -570,25 +601,32 @@ function the_breadcrumbs() {
 
 function loopMembre($user, $role)
 {
-    return '<div class="membre-infos">
+   echo '<div class="membre-infos">
              '. get_avatar( $user->ID, 'avatar-image') .'
         <div class="infos">
             <div class="name">
                 <span class="membre-name">'. $user->display_name .'</span>
                 <span class="membre-rank"> ('. $role .')</span>
                 <div class="ligne-membre"></div>
-            </div>
-            <div class="game">
-                Joue à : <span class="color-membre">'. $user->display_name .'</span>
-            </div>
-            <div class="age">
-                Age : <span class="color-membre">'. $user->display_name .'</span>
-            </div>
-            <div class="nationalite">
-                Nationalité : <span class="color-membre">'. $user->display_name .'</span>
-            </div>
-        </div>
+            </div>';
+            if(get_the_author_meta( 'joue', $user->ID ))
+            {
+                $jeu = get_category( get_the_author_meta( 'joue', $user->ID ), false );
+                echo '<div class="game">
+                Joue à : <a href="'. get_category_link($jeu->cat_ID) .'" class="color-membre">'. $jeu->cat_name .'</a>
+                </div>';
+            }
+            if(get_the_author_meta( 'age', $user->ID ))
+                echo '<div class="age">
+                Age : <span class="color-membre">'. get_the_author_meta( 'age', $user->ID ) .'</span>
+            </div>';
+            if(get_the_author_meta( 'nationalite', $user->ID ))
+                echo '<div class="nationalite">
+                Nationalité : <span class="color-membre">'. get_the_author_meta( 'nationalite', $user->ID ) .'</span>
+            </div>';
+          
+     echo ' </div>
     </div>';
-}
 
+}
 ?>
