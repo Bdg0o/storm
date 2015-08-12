@@ -17,7 +17,7 @@
 						<a href="../feed/" class="rss" alt="rss">rss</a>
 					</div>
 					<div class="col_tier">
-						<h5>Twittes :</h5>
+						<h5>Tweets :</h5>
 						<div id="last-tweet">
 							<?php
 								// ini_set('display_errors', 1);
